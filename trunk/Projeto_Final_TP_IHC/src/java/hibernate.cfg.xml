@@ -4,7 +4,6 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Projeto_TP_IHC</property>
-    <property name="hibernate.connection.username">postgres</property>
+ 
   </session-factory>
 </hibernate-configuration>
