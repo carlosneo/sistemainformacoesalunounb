@@ -32,8 +32,18 @@
                                   Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
                                   visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
                 </h:panelGrid>  
+           
+            
             </p:tab>  
             <p:tab title="Questionário">  
+                
+                <h:outputLabel value="Nome: " for="nome" />
+		  			<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}" size="35"
+		  			maxlength="45" required="true" requiredMessage="Por favor, digite seu nome!!" 
+		  			validatorMessage="O nome deve conter entre 7 e 45 caracteres!!" style="margin-left:20px">
+		  			<f:validateLength minimum="7" maximum="45" />
+		  			</p:inputText>
+                               
             </p:tab>  
         </p:tabView> 
     </h:body>
