@@ -10,15 +10,17 @@
 
     <h:form>
 
-             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
-                 <p:menuitem value="Pagina Principal" url="index.xhtml" />  
-             </p:menubar>
+        <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+            <p:menuitem value="Pagina Principal" url="index.xhtml" />  
+        </p:menubar>
 
-         </h:form>
 
-    
-    
-    
+
+    </h:form>
+
+
+
+
     <h:body style="font-size: 12px;background-image:url(Images/imagem.jpg)">
 
 
@@ -26,7 +28,7 @@
 
             <p:tab title="Inicio">  
                 <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
-                          
+
                     <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
                                   Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
                                   Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
@@ -36,6 +38,17 @@
             
             </p:tab>  
             <p:tab title="Questionário">  
+
+                <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+                    <h:outputText value="Default: " />
+                    <p:selectOneRadio >
+                        <f:selectItem itemLabel="Option 1" itemValue="Option 1" />
+                        <f:selectItem itemLabel="Option 2" itemValue="Option 2" />
+                        <f:selectItem itemLabel="Option 3" itemValue="Option 3" />
+                    </p:selectOneRadio>
+
+                    </h:panelGrid>
                 
                 <h:outputLabel value="Nome: " for="nome" />
 		  			<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}" size="35"
