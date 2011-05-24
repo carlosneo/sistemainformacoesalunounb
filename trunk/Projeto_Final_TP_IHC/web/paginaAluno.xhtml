@@ -14,8 +14,6 @@
             <p:menuitem value="Pagina Principal" url="index.xhtml" />  
         </p:menubar>
 
-
-
     </h:form>
 
 
@@ -26,7 +24,7 @@
 
         <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
-            <p:tab title="Inicio">  
+            <p:tab title="Seja bem vindo">  
                 <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
 
                     <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
@@ -39,10 +37,10 @@
             </p:tab>  
 
             <p:tab title="Questionário" >  
-                <h:panelGrid border="5" cellpadding="5" cellspacing="20">
+                <h:panelGrid border="5" cellpadding="2" cellspacing="10">
 
 
-                    <h:panelGrid columns="1">
+                    <h:panelGrid columns="2">
                         <h:outputLabel value="Nome: " for="nome" />
                         <p:inputText id="nome" label="Nome" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite seu nome!!" 
@@ -99,11 +97,13 @@
                             <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
                             <f:selectItem itemLabel="Varjão" itemValue="" />
                             <f:selectItem itemLabel="Outro" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
                         </p:selectOneMenu>
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="1">
+                    <h:panelGrid columns="2">
                         <h:outputLabel value="Escola em que concluiu o Ensino Médio: " for="escolaConc" />
                         <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
@@ -123,7 +123,7 @@
                     </h:panelGrid>
 
 
-                    <h:panelGrid columns="1">
+                    <h:panelGrid columns="2">
                         <h:outputLabel value="Se afirmativo, onde ? " for="cusinho" />
                         <p:inputText id="cursinho" label="cursinho" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
@@ -181,6 +181,8 @@
                             <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
                             <f:selectItem itemLabel="São sebastião" itemValue="" />
                             <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
                         </p:selectOneMenu>
 
                     </h:panelGrid>
@@ -239,10 +241,11 @@
 
                     </h:panelGrid>
 
-
-
-
                 </h:panelGrid>
+                
+                <p:button value="Enviar" style="margin-left: 600px;margin-top: 20px">
+                        
+                        </p:button>
             </p:tab>           
         </p:tabView> 
     </h:body>
