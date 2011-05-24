@@ -30,7 +30,7 @@
                     <file>${&lt;&lt;&lt;&lt;&lt;&lt;&lt; .mine}</file>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.primefaces-3.0.M1.jar-1}</file>
+                    <file>${file.reference.primefaces-3.0.M1.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
