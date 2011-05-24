@@ -24,7 +24,7 @@
     <h:body style="font-size: 12px;background-image:url(Images/imagem.jpg)">
 
 
-        <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; ">  
+        <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
             <p:tab title="Inicio">  
                 <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
@@ -38,162 +38,211 @@
 
             </p:tab>  
 
-            <p:tab title="Questionário">  
+            <p:tab title="Questionário" >  
+                <h:panelGrid border="5" cellpadding="5" cellspacing="20">
 
-                <h:outputLabel value="Nome: " for="nome" />
-                <p:inputText id="nome" label="Nome" value="" size="35"
-                             maxlength="45" required="true" requiredMessage="Por favor, digite seu nome!!" 
-                             validatorMessage="O nome deve conter entre 7 e 45 caracteres!!" style="margin-left:20px">
-                    <f:validateLength minimum="7" maximum="45" />
-                </p:inputText>
 
-                <h:panelGrid columns="2">
+                    <h:panelGrid columns="1">
+                        <h:outputLabel value="Nome: " for="nome" />
+                        <p:inputText id="nome" label="Nome" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite seu nome!!" 
+                                     validatorMessage="O nome deve conter entre 7 e 45 caracteres!!" >
+                            <f:validateLength minimum="7" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
 
-                    <h:outputText value="Sexo: " />
-                    <p:selectOneRadio>
-                        <f:selectItem itemLabel="Masculino" itemValue="Mas." />
-                        <f:selectItem itemLabel="Feminino" itemValue="Fem." />
-                    </p:selectOneRadio>
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Sexo: " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Masculino" itemValue="Mas." />
+                            <f:selectItem itemLabel="Feminino" itemValue="Fem." />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Cidade: " />
+                        <p:selectOneMenu  effect="drop" height="250">
+                            <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
+                            <f:selectItem itemLabel="Aguas Claras" itemValue="cidade 1" />
+                            <f:selectItem itemLabel="Asa norte" itemValue="cidade 2" />
+                            <f:selectItem itemLabel="Asa sul" itemValue="cidade 3" />
+                            <f:selectItem itemLabel="Brazlandia" itemValue="" />
+                            <f:selectItem itemLabel="Candangolandia" itemValue="" />
+                            <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
+                            <f:selectItem itemLabel="Cruzeiro" itemValue="" />
+                            <f:selectItem itemLabel="Gama" itemValue="" />
+                            <f:selectItem itemLabel="Guará" itemValue="" />
+                            <f:selectItem itemLabel="Itapoã" itemValue="" />
+                            <f:selectItem itemLabel="Lago Norte" itemValue="" />
+                            <f:selectItem itemLabel="Lago sul" itemValue="" />
+                            <f:selectItem itemLabel="Luziania/GO" itemValue="" />
+                            <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
+                            <f:selectItem itemLabel="Núcleo Bandeirante" itemValue="" />
+                            <f:selectItem itemLabel="Park Way/Aeroporto" itemValue="" />
+                            <f:selectItem itemLabel="Park Way/EPTG" itemValue="" />
+                            <f:selectItem itemLabel="Planaltina" itemValue="" />
+                            <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
+                            <f:selectItem itemLabel="Samambaia" itemValue="" />
+                            <f:selectItem itemLabel="Santa Maria" itemValue="" />
+                            <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
+                            <f:selectItem itemLabel="São sebastião" itemValue="" />
+                            <f:selectItem itemLabel="Sobradinho" itemValue="" />
+                            <f:selectItem itemLabel="Sobradinho II" itemValue="" />
+                            <f:selectItem itemLabel="Sudoeste e Octogonal" itemValue="" />
+                            <f:selectItem itemLabel="Taguatinga" itemValue="" />
+                            <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
+                            <f:selectItem itemLabel="Varjão" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="1">
+                        <h:outputLabel value="Escola em que concluiu o Ensino Médio: " for="escolaConc" />
+                        <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ? " />
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+
+
+                    <h:panelGrid columns="1">
+                        <h:outputLabel value="Se afirmativo, onde ? " for="cusinho" />
+                        <p:inputText id="cursinho" label="cursinho" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Por quanto tempo ? " />
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="1 Semestre" itemValue="1semestre" />
+                            <f:selectItem itemLabel="Menos de 1 semestre" itemValue="menosAno" />
+                            <f:selectItem itemLabel="1 ano" itemValue="1ano" />
+                            <f:selectItem itemLabel="Mais de um ano" itemValue="maisAno" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Se afirmativo, qual cidade ?" />
+                        <p:selectOneMenu  effect="drop" height="250">
+                            <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
+                            <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
+                            <f:selectItem itemLabel="Gama" itemValue="" />
+                            <f:selectItem itemLabel="Luziania/GO" itemValue="" />
+                            <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
+                            <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
+                            <f:selectItem itemLabel="Samambaia" itemValue="" />
+                            <f:selectItem itemLabel="Santa Maria" itemValue="" />
+                            <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
+                            <f:selectItem itemLabel="São sebastião" itemValue="" />
+                            <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Estado civil: " />
+                        <p:selectOneMenu  effect="drop" height="210">
+                            <f:selectItem itemLabel="Selecione o estado civil" itemValue=""/>
+                            <f:selectItem itemLabel="Solteiro" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Casado" itemValue="" />
+                            <f:selectItem itemLabel="Separado" itemValue="" />
+                            <f:selectItem itemLabel="Desquitado" itemValue="" />
+                            <f:selectItem itemLabel="Divorciado" itemValue="" />
+                            <f:selectItem itemLabel="Viuvo" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Quantidade de irmão que você possui: " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="Um" itemValue="" />
+                            <f:selectItem itemLabel="Dois" itemValue="" />
+                            <f:selectItem itemLabel="Três" itemValue="" />
+                            <f:selectItem itemLabel="Quatro ou mais" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Quantidade de filhos que você possui: " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="Um" itemValue="" />
+                            <f:selectItem itemLabel="Dois" itemValue="" />
+                            <f:selectItem itemLabel="Três" itemValue="" />
+                            <f:selectItem itemLabel="Quatro ou mais" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="Voce se define como ? " />
+                        <p:selectOneMenu  effect="drop" height="210">
+                            <f:selectItem itemLabel="Selecione a opção    " itemValue=""/>
+                            <f:selectItem itemLabel="Branco" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Negro" itemValue="" />
+                            <f:selectItem itemLabel="Pardo/Mulato" itemValue="" />
+                            <f:selectItem itemLabel="Amarelo" itemValue="" />
+                            <f:selectItem itemLabel="Ocidental" itemValue="" />
+                            <f:selectItem itemLabel="Indigena" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+
+
 
                 </h:panelGrid>
-
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Cidade: " />
-                    <p:selectOneMenu  effect="drop" height="250">
-                        <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
-                        <f:selectItem itemLabel="Aguas Claras" itemValue="cidade 1" />
-                        <f:selectItem itemLabel="Asa norte" itemValue="cidade 2" />
-                        <f:selectItem itemLabel="Asa sul" itemValue="cidade 3" />
-                        <f:selectItem itemLabel="Brazlandia" itemValue="" />
-                        <f:selectItem itemLabel="Candangolandia" itemValue="" />
-                        <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
-                        <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
-                        <f:selectItem itemLabel="Cruzeiro" itemValue="" />
-                        <f:selectItem itemLabel="Gama" itemValue="" />
-                        <f:selectItem itemLabel="Guará" itemValue="" />
-                        <f:selectItem itemLabel="Itapoã" itemValue="" />
-                        <f:selectItem itemLabel="Lago Norte" itemValue="" />
-                        <f:selectItem itemLabel="Lago sul" itemValue="" />
-                        <f:selectItem itemLabel="Luziania/GO" itemValue="" />
-                        <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
-                        <f:selectItem itemLabel="Núcleo Bandeirante" itemValue="" />
-                        <f:selectItem itemLabel="Park Way/Aeroporto" itemValue="" />
-                        <f:selectItem itemLabel="Park Way/EPTG" itemValue="" />
-                        <f:selectItem itemLabel="Planaltina" itemValue="" />
-                        <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
-                        <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
-                        <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
-                        <f:selectItem itemLabel="Samambaia" itemValue="" />
-                        <f:selectItem itemLabel="Santa Maria" itemValue="" />
-                        <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
-                        <f:selectItem itemLabel="São sebastião" itemValue="" />
-                        <f:selectItem itemLabel="Sobradinho" itemValue="" />
-                        <f:selectItem itemLabel="Sobradinho II" itemValue="" />
-                        <f:selectItem itemLabel="Sudoeste e Octogonal" itemValue="" />
-                        <f:selectItem itemLabel="Taguatinga" itemValue="" />
-                        <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
-                        <f:selectItem itemLabel="Varjão" itemValue="" />
-                        <f:selectItem itemLabel="Outro" itemValue="" />
-                    </p:selectOneMenu>
-
-                </h:panelGrid>
-
-                <h:outputLabel value="Escola em que concluiu o Ensino Médio: " for="escolaConc" />
-                <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
-                             maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
-                             validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" style="margin-left:20px">
-                    <f:validateLength minimum="3" maximum="45" />
-                </p:inputText>
-
-
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ? " />
-                    <p:selectOneRadio >
-                        <f:selectItem itemLabel="Sim" itemValue="sim" />
-                        <f:selectItem itemLabel="Não" itemValue="nao" />
-                    </p:selectOneRadio>
-
-                </h:panelGrid>
-
-                <h:outputLabel value="Se afirmativo, onde ? " for="cusinho" />
-                <p:inputText id="cursinho" label="cursinho" value="" size="35"
-                             maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
-                             validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" style="margin-left:20px">
-                    <f:validateLength minimum="3" maximum="45" />
-                </p:inputText>
-
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Por quanto tempo ? " />
-                    <p:selectOneRadio >
-                        <f:selectItem itemLabel="1 Semestre" itemValue="1semestre" />
-                        <f:selectItem itemLabel="Menos de 1 semestre" itemValue="menosAno" />
-                        <f:selectItem itemLabel="1 ano" itemValue="1ano" />
-                        <f:selectItem itemLabel="Mais de um ano" itemValue="maisAno" />
-                    </p:selectOneRadio>
-                </h:panelGrid>
-
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ? " />
-                    <p:selectOneRadio>
-                        <f:selectItem itemLabel="Sim" itemValue="sim" />
-                        <f:selectItem itemLabel="Não" itemValue="nao" />
-                    </p:selectOneRadio>
-
-                </h:panelGrid>
-
-                <h:panelGrid columns="2">
-                    <h:outputText value="Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " />
-                    <p:selectOneRadio>
-                        <f:selectItem itemLabel="Sim" itemValue="sim" />
-                        <f:selectItem itemLabel="Não" itemValue="nao" />
-                    </p:selectOneRadio>
-                </h:panelGrid>
-
-
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Se afirmativo, qual cidade ?" />
-                    <p:selectOneMenu  effect="drop" height="250">
-                        <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
-                        <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
-                        <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
-                        <f:selectItem itemLabel="Gama" itemValue="" />
-                        <f:selectItem itemLabel="Luziania/GO" itemValue="" />
-                        <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
-                        <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
-                        <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
-                        <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
-                        <f:selectItem itemLabel="Samambaia" itemValue="" />
-                        <f:selectItem itemLabel="Santa Maria" itemValue="" />
-                        <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
-                        <f:selectItem itemLabel="São sebastião" itemValue="" />
-                        <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
-                    </p:selectOneMenu>
-
-                </h:panelGrid>
-                
-                <h:panelGrid columns="2">
-
-                    <h:outputText value="Estado civil: " />
-                    <p:selectOneMenu  effect="drop" height="210">
-                        <f:selectItem itemLabel="Selecione o estado civil" itemValue=""/>
-                        <f:selectItem itemLabel="Solteiro" itemValue="Option 3" />
-                        <f:selectItem itemLabel="Casado" itemValue="" />
-                        <f:selectItem itemLabel="Separado" itemValue="" />
-                        <f:selectItem itemLabel="Desquitado" itemValue="" />
-                        <f:selectItem itemLabel="Divorciado" itemValue="" />
-                        <f:selectItem itemLabel="Viuvo" itemValue="" />
-                        <f:selectItem itemLabel="Outro" itemValue="" />
-                    </p:selectOneMenu>
-
-                </h:panelGrid>
-                
-
-
             </p:tab>           
         </p:tabView> 
     </h:body>
