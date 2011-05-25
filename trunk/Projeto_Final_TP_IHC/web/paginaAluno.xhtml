@@ -19,13 +19,13 @@
 
 
 
-    <h:body style="font-size: 12px;background-image:url(Images/imagem.jpg)">
+   <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
 
 
         <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
             <p:tab title="Seja bem vindo">  
-                <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
+                <h:panelGrid  columns="2" cellpadding="10" cellspacing="10" width="700">  
 
                     <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
                                   Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
@@ -37,7 +37,7 @@
             </p:tab>  
 
             <p:tab title="Questionário" >  
-                <h:panelGrid border="5" cellpadding="2" cellspacing="10">
+                <h:panelGrid border="5" cellpadding="2" cellspacing="10" width="900">
 
 
                     <h:panelGrid columns="2">
@@ -61,8 +61,8 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Cidade: " />
-                        <p:selectOneMenu  effect="drop" height="250">
+                        <h:outputText value="1) Cidade: " />
+                        <p:selectOneMenu  effect="drop" height="250" style="width: 300px">
                             <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
                             <f:selectItem itemLabel="Aguas Claras" itemValue="cidade 1" />
                             <f:selectItem itemLabel="Asa norte" itemValue="cidade 2" />
@@ -104,8 +104,17 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:outputLabel value="Escola em que concluiu o Ensino Médio: " for="escolaConc" />
+                        <h:outputLabel value="2) Escola em que concluiu o Ensino Médio: " for="escolaConc" />
                         <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2">
+                        <h:outputLabel value="2) Local da escola em que concluiu o Ensino Médio: " for="escolaConcLocal" />
+                        <p:inputText id="escolaConcLocal" label="escolaConcLocal" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
                             <f:validateLength minimum="3" maximum="45" />
@@ -114,7 +123,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ? " />
+                        <h:outputText value="3) Fez Cursinho pré-vestibular, após o Ensino Medio ? " />
                         <p:selectOneRadio >
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
@@ -124,7 +133,7 @@
 
 
                     <h:panelGrid columns="2">
-                        <h:outputLabel value="Se afirmativo, onde ? " for="cusinho" />
+                        <h:outputLabel value="3B) Se afirmativo, onde ? " for="cusinho" />
                         <p:inputText id="cursinho" label="cursinho" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
@@ -135,7 +144,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Por quanto tempo ? " />
+                        <h:outputText value="3C) Por quanto tempo ? " />
                         <p:selectOneRadio >
                             <f:selectItem itemLabel="1 Semestre" itemValue="1semestre" />
                             <f:selectItem itemLabel="Menos de 1 semestre" itemValue="menosAno" />
@@ -146,7 +155,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ? " />
+                        <h:outputText value="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ? " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
@@ -155,7 +164,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:outputText value="Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " />
+                        <h:outputText value="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
@@ -165,7 +174,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Se afirmativo, qual cidade ?" />
+                        <h:outputText value="5B) Se afirmativo, qual cidade ?" />
                         <p:selectOneMenu  effect="drop" height="250">
                             <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
                             <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
@@ -189,7 +198,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Estado civil: " />
+                        <h:outputText value="6) Estado civil: " />
                         <p:selectOneMenu  effect="drop" height="210">
                             <f:selectItem itemLabel="Selecione o estado civil" itemValue=""/>
                             <f:selectItem itemLabel="Solteiro" itemValue="Option 3" />
@@ -204,7 +213,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:outputText value="Quantidade de irmão que você possui: " />
+                        <h:outputText value="7) Quantidade de irmão que você possui: " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Nenhum" itemValue="" />
                             <f:selectItem itemLabel="Um" itemValue="" />
@@ -215,7 +224,7 @@
                     </h:panelGrid>
 
                     <h:panelGrid columns="2">
-                        <h:outputText value="Quantidade de filhos que você possui: " />
+                        <h:outputText value="8) Quantidade de filhos que você possui: " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Nenhum" itemValue="" />
                             <f:selectItem itemLabel="Um" itemValue="" />
@@ -227,7 +236,7 @@
 
                     <h:panelGrid columns="2">
 
-                        <h:outputText value="Voce se define como ? " />
+                        <h:outputText value="9) Voce se define como ? " />
                         <p:selectOneMenu  effect="drop" height="210">
                             <f:selectItem itemLabel="Selecione a opção    " itemValue=""/>
                             <f:selectItem itemLabel="Branco" itemValue="Option 3" />
@@ -241,11 +250,120 @@
 
                     </h:panelGrid>
 
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="10) Situação da moradia atual: ? "/>
+                        <p:selectOneMenu  effect="drop" height="210" style="width: 200px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Com os pais" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Com outros familiares" itemValue="" />
+                            <f:selectItem itemLabel="Com esposo(a)/filho(a)" itemValue="" />
+                            <f:selectItem itemLabel="Amigos" itemValue="" />
+                            <f:selectItem itemLabel="Alojamento Universitario" itemValue="" />
+                            <f:selectItem itemLabel="Sozinho" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="11) Estimativa média de renda mensal em sua casa. (1 salário-mínimo = R$ 465,00) "/>
+                        <p:selectOneMenu  effect="drop" height="140" style="width: 280px">
+                            <f:selectItem itemLabel="Até 3 salários-mínimos " itemValue=""/>
+                            <f:selectItem itemLabel="De 3 a 10 salários-mínimos" itemValue="Option 3" />
+                            <f:selectItem itemLabel="De 10 a 20 salários-mínimos" itemValue="" />
+                            <f:selectItem itemLabel="De 20 a 30 salários-mínimos" itemValue="" />
+                            <f:selectItem itemLabel="Mais de 30 salários-mínimos" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2">
+
+                        <h:outputText value="12) Quantas pessoas moram com você ? " />
+                        <p:selectOneMenu  effect="drop" height="160">
+                            <f:selectItem itemLabel="Selecione a opção    " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Uma ou duas" itemValue="" />
+                            <f:selectItem itemLabel="Três ou quatro" itemValue="" />
+                            <f:selectItem itemLabel="Cinco ou seis" itemValue="" />
+                            <f:selectItem itemLabel="Mais que seis" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                      <h:panelGrid columns="2">
+
+                        <h:outputText value="13) Em relação ao trabalho: " />
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Não trabalho, sou sustentado pela familia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Trabalho e recebo ajuda da família" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e me sustento" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e a familia me sustenta" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e sou o responsavel pelo sustento da familia" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2">
+
+                        <h:outputText value="14) Se você trabalha qual é a carga horária semanal da atividade?" />
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Não exerço atividade remunerada" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Trabalho eventualmente" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho até 20 horas" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho mais de 20 horas e menos de 40 horas" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho em tempo integral – 40 horas " itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                    
+                     <h:panelGrid columns="2">
+
+                        <h:outputText value="15) Grau de escolaridade do seu pai:  " />
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma escolaridade" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 1ª a 4ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 5ª a 8ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Médio" itemValue="" />
+                            <f:selectItem itemLabel="Superior " itemValue="" />
+                            <f:selectItem itemLabel="Pós-graduação" itemValue="" />
+                            <f:selectItem itemLabel="Desconheço" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2">
+
+                        <h:outputText value="15) Grau de escolaridade do seu mae:  " />
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma escolaridade" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 1ª a 4ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 5ª a 8ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Médio" itemValue="" />
+                            <f:selectItem itemLabel="Superior " itemValue="" />
+                            <f:selectItem itemLabel="Pós-graduação" itemValue="" />
+                            <f:selectItem itemLabel="Desconheço" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+
                 </h:panelGrid>
-                
+
                 <p:button value="Enviar" style="margin-left: 600px;margin-top: 20px">
-                        
-                        </p:button>
+
+                </p:button>
             </p:tab>           
         </p:tabView> 
     </h:body>
