@@ -22,44 +22,57 @@
    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
 
 
-        <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
+       <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
-            <p:tab title="Seja bem vindo">  
-                <h:panelGrid  columns="2" cellpadding="10" cellspacing="10" width="700">  
+           <p:tab title="Seja bem vindo">  
+               <h:panelGrid  columns="2" cellpadding="5" cellspacing="5" width="1500">
+                   
+               <h:panelGrid  columns="1" cellpadding="5" cellspacing="5" width="800">  
 
-                    <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
-                                  Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
-                                  Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
-                                  visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
-                </h:panelGrid>  
+                   <h:outputText value="Olá!"/>
+                   <h:outputText style="margin-left: 35px"  value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
+                                 Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
+                                 Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
+                                 visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
+               </h:panelGrid>
+
+               <h:panelGrid  columns="1" cellpadding="5" cellspacing="5" width="800" >  
+                   
+                   <h:outputText value="Todos os seus dados estarão seguros, preencha o questionario somente com informações verdadeiras"/>
+                   <h:outputText value="Para o acesso completo ao questionario, você precisa se cadastrar como usuário do site."/>
+                   <h:outputText value="Preencha o Formulário de Cadastramento com os seus dados."/>
+                   <h:outputText value=" Visite o endereço web indicado na mensagem para confirmar o seu cadastramento automaticamente e começar a navegar."/>
+
+               </h:panelGrid>  
+                   </h:panelGrid>
 
 
-            </p:tab>  
+           </p:tab>  
 
             <p:tab title="Questionário" >  
-                <h:panelGrid border="5" cellpadding="2" cellspacing="10" width="900">
+               
+                <h:panelGrid border="5" cellpadding="5" cellspacing="10" width="1100" >
 
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="Nome: " for="nome" />
                         <p:inputText id="nome" label="Nome" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite seu nome!!" 
                                      validatorMessage="O nome deve conter entre 7 e 45 caracteres!!" >
                             <f:validateLength minimum="7" maximum="45" />
                         </p:inputText>
-                    </h:panelGrid>
-
-                    <h:panelGrid columns="2">
-
+                        
                         <h:outputText value="Sexo: " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Masculino" itemValue="Mas." />
                             <f:selectItem itemLabel="Feminino" itemValue="Fem." />
                         </p:selectOneRadio>
-
+                        
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                   
+
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="1) Cidade: " />
                         <p:selectOneMenu  effect="drop" height="250" style="width: 300px">
@@ -103,7 +116,7 @@
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="2) Escola em que concluiu o Ensino Médio: " for="escolaConc" />
                         <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
@@ -112,7 +125,7 @@
                         </p:inputText>
                     </h:panelGrid>
                     
-                     <h:panelGrid columns="2">
+                     <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="2) Local da escola em que concluiu o Ensino Médio: " for="escolaConcLocal" />
                         <p:inputText id="escolaConcLocal" label="escolaConcLocal" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
@@ -121,9 +134,9 @@
                         </p:inputText>
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
 
-                        <h:outputText value="3) Fez Cursinho pré-vestibular, após o Ensino Medio ? " />
+                        <h:outputText value="3) Fez Cursinho pré-vestibular, após o Ensino Medio ?   " />
                         <p:selectOneRadio >
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
@@ -132,7 +145,7 @@
                     </h:panelGrid>
 
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="3B) Se afirmativo, onde ? " for="cusinho" />
                         <p:inputText id="cursinho" label="cursinho" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
@@ -142,7 +155,7 @@
                     </h:panelGrid>
 
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
 
                         <h:outputText value="3C) Por quanto tempo ? " />
                         <p:selectOneRadio >
@@ -153,7 +166,7 @@
                         </p:selectOneRadio>
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
 
                         <h:outputText value="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ? " />
                         <p:selectOneRadio>
@@ -163,7 +176,7 @@
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
                         <h:outputText value="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
@@ -172,7 +185,7 @@
                     </h:panelGrid>
 
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="5B) Se afirmativo, qual cidade ?" />
                         <p:selectOneMenu  effect="drop" height="250">
@@ -196,7 +209,7 @@
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="6) Estado civil: " />
                         <p:selectOneMenu  effect="drop" height="210">
@@ -212,7 +225,7 @@
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
                         <h:outputText value="7) Quantidade de irmão que você possui: " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Nenhum" itemValue="" />
@@ -223,7 +236,7 @@
                         </p:selectOneRadio>
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
                         <h:outputText value="8) Quantidade de filhos que você possui: " />
                         <p:selectOneRadio>
                             <f:selectItem itemLabel="Nenhum" itemValue="" />
@@ -234,7 +247,7 @@
                         </p:selectOneRadio>
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="9) Voce se define como ? " />
                         <p:selectOneMenu  effect="drop" height="210">
@@ -250,7 +263,7 @@
 
                     </h:panelGrid>
 
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="10) Situação da moradia atual: ? "/>
                         <p:selectOneMenu  effect="drop" height="210" style="width: 200px">
@@ -266,7 +279,7 @@
 
                     </h:panelGrid>
                     
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="11) Estimativa média de renda mensal em sua casa. (1 salário-mínimo = R$ 465,00) "/>
                         <p:selectOneMenu  effect="drop" height="140" style="width: 280px">
@@ -279,7 +292,7 @@
 
                     </h:panelGrid>
                     
-                     <h:panelGrid columns="2">
+                     <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="12) Quantas pessoas moram com você ? " />
                         <p:selectOneMenu  effect="drop" height="160">
@@ -293,7 +306,7 @@
 
                     </h:panelGrid>
                     
-                      <h:panelGrid columns="2">
+                      <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="13) Em relação ao trabalho: " />
                         <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
@@ -307,7 +320,7 @@
 
                     </h:panelGrid>
                     
-                     <h:panelGrid columns="2">
+                     <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="14) Se você trabalha qual é a carga horária semanal da atividade?" />
                         <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
@@ -322,7 +335,7 @@
                     </h:panelGrid>
                     
                     
-                     <h:panelGrid columns="2">
+                     <h:panelGrid columns="2" cellpadding="5">
 
                         <h:outputText value="15) Grau de escolaridade do seu pai:  " />
                         <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
@@ -340,10 +353,10 @@
 
                     </h:panelGrid>
                     
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" cellpadding="5">
 
-                        <h:outputText value="15) Grau de escolaridade do seu mae:  " />
-                        <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
+                        <h:outputText value="16) Grau de escolaridade do seu mae:  " />
+                        <p:selectOneMenu  effect="drop" height="200" style="width: 340px">
                             <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
                             <f:selectItem itemLabel="Nenhuma escolaridade" itemValue="Option 3" />
                             <f:selectItem itemLabel="Ensino Fundamental: de 1ª a 4ª série" itemValue="" />
@@ -352,20 +365,237 @@
                             <f:selectItem itemLabel="Superior " itemValue="" />
                             <f:selectItem itemLabel="Pós-graduação" itemValue="" />
                             <f:selectItem itemLabel="Desconheço" itemValue="" />
-                            <f:selectItem itemLabel="" itemValue="" />
-                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="17) Você cursou o Ensino Médio " />
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Todo em escola pública" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Todo em escola privada" itemValue="" />
+                            <f:selectItem itemLabel="Maior parte em escola pública" itemValue="" />
+                            <f:selectItem itemLabel="Maior parte em escola privada" itemValue="" />
+                            <f:selectItem itemLabel="Metade em escola pública e metade em particular" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="18) Seu curso de ensino médio era " />
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Ensino Médio regular" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino médio técnico profissionalizante " itemValue="" />
+                            <f:selectItem itemLabel="Magistério (Curso Normal)" itemValue="" />
+                            <f:selectItem itemLabel="Educação de Jovens e Adultos – EJA" itemValue="" />
+                            <f:selectItem itemLabel="Supletivo" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
                         </p:selectOneMenu>
 
                     </h:panelGrid>
 
+                    <h:panelGrid columns="2" width="700" cellpadding="5">
+
+                        <h:outputText value="19) Você domina algum idioma estrangeiro? Qual(is) ?"  /> <h:outputText value="" />
+                        
+                        <p:tab title="">
+                        <h:outputText value="A) Ingles " />
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+                        </p:selectManyCheckbox>
+                        </p:tab>
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="B) Espanhol " />
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                                <f:selectItem itemLabel="Escreve" itemValue="" />
+                                <f:selectItem itemLabel="Fala" itemValue="" />
+                            
+                        </p:selectManyCheckbox>
+                        
+                         <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="C) Frances " />
+                            
+                                <f:selectItem itemLabel="Le  " itemValue="" />
+                                <f:selectItem itemLabel="Escreve" itemValue="" />
+                                <f:selectItem itemLabel="Fala" itemValue="" />
+                            
+                        </p:selectManyCheckbox>
+                        
+                         <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="D) Alemao " />
+                            
+                                <f:selectItem itemLabel="Le  " itemValue="" />
+                                <f:selectItem itemLabel="Escreve" itemValue="" />
+                                <f:selectItem itemLabel="Fala" itemValue="" />
+                            
+                         </p:selectManyCheckbox>
+                        
+                        <h:outputText value="E) Outro "/>
+                        <p:selectOneRadio> <f:selectItem itemLabel="" itemValue="" /> </p:selectOneRadio>
+                       
+                        <p:selectManyCheckbox value="#{formBean}"
+                                              layout="pageDirection">
+                            <f:selectItems value="#{formBean}" />
+                        </p:selectManyCheckbox>
+
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="20)  Além dos livros escolares, quantos livros você lê, em média, por ano? " />
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="No Maximo dois" itemValue="" />
+                            <f:selectItem itemLabel="Entre tres e cinco" itemValue="" />
+                            <f:selectItem itemLabel="Entre seis e oito" itemValue="" />
+                            <f:selectItem itemLabel="Oito ou mais" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="21) Quais os tipos de livros que você mais lê? ?"  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Obras literárias de ficção  " itemValue="" />
+                            <f:selectItem itemLabel="Obras literárias de ficção" itemValue="" />
+                            <f:selectItem itemLabel="Livros técnicos" itemValue="" />
+                            <f:selectItem itemLabel="Livros de auto-ajuda" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="22)Que meio você mais utiliza para se manter atualizado sobre os acontecimentos do mundo contemporâneo?"  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Jornais " itemValue="" />
+                            <f:selectItem itemLabel="Revistas" itemValue="" />
+                            <f:selectItem itemLabel="TV" itemValue="" />
+                            <f:selectItem itemLabel="Rádio" itemValue="" />
+                            <f:selectItem itemLabel="Internet" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
+                     <h:panelGrid columns="1" cellpadding="5" width="900"> 
+                        <h:outputText value="23) Com que freqüência você lê jornal? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Diariamente" itemValue="" />
+                            <f:selectItem itemLabel="Algumas vezes por semana" itemValue="" />
+                            <f:selectItem itemLabel="Somente ao domingos" itemValue="" />
+                            <f:selectItem itemLabel="Raramente" itemValue="" />
+                            <f:selectItem itemLabel="Nunca (Vá para a questão 25)" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="24) Quais os assuntos dos jornais que você mais lê? "  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Todos os assuntos " itemValue="" />
+                            <f:selectItem itemLabel="Política e/ou Economia" itemValue="" />
+                            <f:selectItem itemLabel="Cultura e Arte" itemValue="" />
+                            <f:selectItem itemLabel="Esportes" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
+                     <h:panelGrid columns="1" cellpadding="5" width="900"> 
+                        <h:outputText value="25) Quantas horas por semana, aproximadamente, você costuma dedicar aos estudos, sem contar as horas de aula? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhuma, apenas assisto às aulas" itemValue="" />
+                            <f:selectItem itemLabel="De uma a duas horas" itemValue="" />
+                            <f:selectItem itemLabel="Três a cinco horas" itemValue="" />
+                            <f:selectItem itemLabel="Seis a oito horas" itemValue="" />
+                            <f:selectItem itemLabel="Mais de oito horas" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="26) Das atividades artístico-culturais listadas abaixo, qual constitui sua preferência para o lazer? "  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Cinema " itemValue="" />
+                            <f:selectItem itemLabel="Teatro" itemValue="" />
+                            <f:selectItem itemLabel="Música" itemValue="" />
+                            <f:selectItem itemLabel="Dança" itemValue="" />
+                            <f:selectItem itemLabel="Exposições" itemValue="" />
+                            <f:selectItem itemLabel="Nenhuma" itemValue="" />
+                            <f:selectItem itemLabel="Outra" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900"> 
+                        <h:outputText value="27) Seu conhecimento de informática é " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Muito bom" itemValue="" />
+                            <f:selectItem itemLabel="Bom" itemValue="" />
+                            <f:selectItem itemLabel="Razoável" itemValue="" />
+                            <f:selectItem itemLabel="Pouco" itemValue="" />
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="28) Você possui computador em sua casa? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="29) Você possui acesso à internet em sua casa? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                     <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="30) Se não, de onde você acessa a internet ? "  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Lan House " itemValue="" />
+                            <f:selectItem itemLabel="Trabalho" itemValue="" />
+                            <f:selectItem itemLabel="Casa de parentes" itemValue="" />
+                            <f:selectItem itemLabel="Não acesoo" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
 
                 </h:panelGrid>
-
-                <p:button value="Enviar" style="margin-left: 600px;margin-top: 20px">
+                
+                <p:button value="Enviar" style="margin-left: 820px;margin-top: 45px">
 
                 </p:button>
-            </p:tab>           
-        </p:tabView> 
+
+            </p:tab >           
+        </p:tabView > 
     </h:body>
 </html>
 
