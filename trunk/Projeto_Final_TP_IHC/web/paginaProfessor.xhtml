@@ -31,7 +31,28 @@
                                   visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
                 </h:panelGrid>  
             </p:tab>  
-            <p:tab title="Estatisticas">  
+            <p:tab title="Estatisticas" >  
+                
+                <p:graphicText value="Graficos obtidos pelos questionarios" fontName="Courier New" fontStyle="bold" fontSize="18" />
+                    
+                <h:panelGrid border="5" columns="2">
+                    
+                
+                 <h:outputText value="Sexo:" />  
+                <p:pieChart value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+
+                 <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" />  
+                <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+
+                <h:outputText value="Quantidade de irmão que você possui:" />  
+                <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+
+                <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ?" />  
+                <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px"  />
+
+                
+                
+                </h:panelGrid>
             </p:tab>  
              <p:tab title="Nova Questão">
                  
