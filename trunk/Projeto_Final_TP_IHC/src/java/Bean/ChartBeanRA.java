@@ -7,20 +7,19 @@ package Bean;
 
 import java.util.*;
 import javax.faces.bean.ManagedBean;
-@ManagedBean (name="chartBeanSexo")
-
+@ManagedBean (name="chartBeanRA")
 /**
  *
- * @author Guilherme
+ * @author Neo
  */
-public class ChartBeanSexo  {
- 
+public class ChartBeanRA {
+
 	private List<Sale> sales;
 
-	public ChartBeanSexo() {
+	public ChartBeanRA() {
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Masculino", 540));
-		sales.add(new Sale("Feminino", 325));
+		sales.add(new Sale("Sim", 40));
+		sales.add(new Sale("Não", 200));
 		
 	}
 
@@ -28,4 +27,3 @@ public class ChartBeanSexo  {
 		return sales;
 	}
 }
-            
