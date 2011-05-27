@@ -141,23 +141,15 @@
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
                         </p:selectOneRadio>
-
-                    </h:panelGrid>
-
-
-                    <h:panelGrid columns="2" cellpadding="5">
-                        <h:outputLabel value="3B) Se afirmativo, onde ? " for="cusinho" />
+                
+                        <h:outputLabel value="3 B) Se afirmativo, onde ? " for="cusinho" />
                         <p:inputText id="cursinho" label="cursinho" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
-                    </h:panelGrid>
-
-
-                    <h:panelGrid columns="1" cellpadding="5" width="900">
-
-                        <h:outputText value="3C) Por quanto tempo ? " />
+               
+                        <h:outputText value="3 C) Por quanto tempo ? " />
                         <p:selectOneRadio >
                             <f:selectItem itemLabel="1 Semestre" itemValue="1semestre" />
                             <f:selectItem itemLabel="Menos de 1 semestre" itemValue="menosAno" />
@@ -182,12 +174,8 @@
                             <f:selectItem itemLabel="Sim" itemValue="sim" />
                             <f:selectItem itemLabel="Não" itemValue="nao" />
                         </p:selectOneRadio>
-                    </h:panelGrid>
 
-
-                    <h:panelGrid columns="2" cellpadding="5">
-
-                        <h:outputText value="5B) Se afirmativo, qual cidade ?" />
+                        <h:outputText value="5 B) Se afirmativo, qual cidade ?" />
                         <p:selectOneMenu  effect="drop" height="250">
                             <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
                             <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
@@ -587,13 +575,163 @@
                         
                         </h:panelGrid>
                     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
 
+                        <h:outputText value="31)  Com que freqüência você utiliza computador? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Várias vezes ao dia" itemValue="" />
+                            <f:selectItem itemLabel="Uma vez ao dia" itemValue="" />
+                            <f:selectItem itemLabel="Três vezes por semena" itemValue="" />
+                            <f:selectItem itemLabel="Uma vez por mês" itemValue="" />
+                            <f:selectItem itemLabel="Nunca" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="32) Costuma utilizar o computador para? "  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Entreterimento" itemValue="" />
+                            <f:selectItem itemLabel="Trabalhos escolares" itemValue="" />
+                            <f:selectItem itemLabel="Trabalhos profissionais" itemValue="" />
+                            <f:selectItem itemLabel="E-mail" itemValue="" />
+                            <f:selectItem itemLabel="Operações bancárias" itemValue="" />
+                            <f:selectItem itemLabel="Compras Eletrönucas" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="33) Você possui automóvel e/ou motocicleta? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <h:outputText value="34) Que tipo de meio de transporte pretende usar para chegar ao campus do Gama? "  /> <h:outputText value="" />
+                      
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Automóvel próprio" itemValue="" />
+                            <f:selectItem itemLabel="Automóvel da família" itemValue="" />
+                            <f:selectItem itemLabel="Ônibus " itemValue="" />
+                            <f:selectItem itemLabel="Motocicleta" itemValue="" />
+                            <f:selectItem itemLabel="Transporte escolar" itemValue="" />
+                            <f:selectItem itemLabel="Bicicleta" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                        
+                        </h:panelGrid>
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="35) Você recebe alguma ajuda financeira mensal (mesada, bolsa ou outros)?   " />
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                    
+                        <h:outputLabel value="35 B) Se afirmativo, Quanto ? " for="cusinho" />
+                        <p:inputText id="qntAjuda" label="qntAjuda" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="36)  O imóvel em que você mora é ? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Próprio (seu ou dos pais)" itemValue="" />
+                            <f:selectItem itemLabel="Alugado" itemValue="" />
+                            <f:selectItem itemLabel="Funcional" itemValue="" />
+                            <f:selectItem itemLabel="Emprestado" itemValue="" />
+                            <f:selectItem itemLabel="Nunca" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="37)  Sua principal prática esportiva é ? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhuma" itemValue="" />
+                            <f:selectItem itemLabel="Futebol" itemValue="" />
+                            <f:selectItem itemLabel="Ginástica" itemValue="" />
+                            <f:selectItem itemLabel="Voleibol" itemValue="" />
+                            <f:selectItem itemLabel="Musculação" itemValue="" />
+                            <f:selectItem itemLabel="Balé" itemValue="" />
+                            <f:selectItem itemLabel="Hipismo" itemValue="" />
+                            <f:selectItem itemLabel="Dança" itemValue="" />
+                            <f:selectItem itemLabel="Ciclismo" itemValue="" />
+                            <f:selectItem itemLabel="Handebol" itemValue="" />
+                            <f:selectItem itemLabel="Natação" itemValue="" />
+                            <f:selectItem itemLabel="Lutas" itemValue="" />
+                            <f:selectItem itemLabel="Outra" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="38) Você já fez ou faz outor curso superior ?   " />
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                    
+                        <h:outputLabel value="38 A) Se afirmativo, Qual ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                        
+                        <h:outputLabel value="38 B) Instituição ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                        
+                        <h:outputLabel value="38 C) Ano de conclusão ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                        
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="39) Qual sua preferência em relação às especialidades do curso de  Engenharia ? " />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Engenharia Automotiva" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia Eletrônica" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia de Energia" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia de Software" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                    
+                    <h:outputText value="Agradecemos sua contribuição! " style="text-align: center; margin-left: 420px;font-style: italic;font-size: 12pt" />
+                    
                 </h:panelGrid>
-                
-                <p:button value="Enviar" style="margin-left: 820px;margin-top: 45px">
 
-                </p:button>
-
+                <p:button value="Enviar" style="margin-left: 1020px;margin-top: 45px">
+       
+                            </p:button>
             </p:tab >           
         </p:tabView > 
     </h:body>
