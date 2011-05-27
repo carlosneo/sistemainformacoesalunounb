@@ -1,0 +1,840 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Pagina do Aluno</title>
+    </h:head>
+
+    <h:form>
+
+        <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+            <p:menuitem value="Pagina Principal" url="index.xhtml" />  
+        </p:menubar>
+
+    </h:form>
+
+
+
+
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+
+
+        <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
+
+            <p:tab title="Seja bem vindo">  
+                <h:panelGrid  columns="2" cellpadding="5" cellspacing="5" width="1500">
+
+                    <h:panelGrid  columns="1" cellpadding="5" cellspacing="5" width="800">  
+
+                        <h:outputText value="Olá!"/>
+                        <h:outputText style="margin-left: 35px"  value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
+                                      Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
+                                      Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
+                                      visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
+
+                        <p:separator/>
+
+                        <h:outputText value="Todos os seus dados estarão seguros, preencha o questionario somente com informações verdadeiras"/>
+                        <h:outputText value="Para o acesso completo ao questionario, você precisa se cadastrar como usuário do site."/>
+                        <h:outputText value="Preencha o Formulário de Cadastramento com os seus dados."/>
+                        <h:outputText value=" Visite o endereço web indicado na mensagem para confirmar o seu cadastramento automaticamente e começar a navegar."/>
+
+                    </h:panelGrid>  
+                </h:panelGrid>
+
+
+            </p:tab>  
+
+            <p:tab title="Questionário" >  
+
+
+                <!--QUESTÃO 01-->                
+
+                <p:panel id="questão1" header="1) . Local onde mora/vai morar quando começar as aulas: " style="margin-bottom:5px;">  
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <p:selectOneMenu  effect="drop" height="250" style="width: 300px">
+                            <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
+                            <f:selectItem itemLabel="Aguas Claras" itemValue="cidade 1" />
+                            <f:selectItem itemLabel="Asa norte" itemValue="cidade 2" />
+                            <f:selectItem itemLabel="Asa sul" itemValue="cidade 3" />
+                            <f:selectItem itemLabel="Brazlandia" itemValue="" />
+                            <f:selectItem itemLabel="Candangolandia" itemValue="" />
+                            <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
+                            <f:selectItem itemLabel="Cruzeiro" itemValue="" />
+                            <f:selectItem itemLabel="Gama" itemValue="" />
+                            <f:selectItem itemLabel="Guará" itemValue="" />
+                            <f:selectItem itemLabel="Itapoã" itemValue="" />
+                            <f:selectItem itemLabel="Lago Norte" itemValue="" />
+                            <f:selectItem itemLabel="Lago sul" itemValue="" />
+                            <f:selectItem itemLabel="Luziania/GO" itemValue="" />
+                            <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
+                            <f:selectItem itemLabel="Núcleo Bandeirante" itemValue="" />
+                            <f:selectItem itemLabel="Park Way/Aeroporto" itemValue="" />
+                            <f:selectItem itemLabel="Park Way/EPTG" itemValue="" />
+                            <f:selectItem itemLabel="Planaltina" itemValue="" />
+                            <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
+                            <f:selectItem itemLabel="Samambaia" itemValue="" />
+                            <f:selectItem itemLabel="Santa Maria" itemValue="" />
+                            <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
+                            <f:selectItem itemLabel="São sebastião" itemValue="" />
+                            <f:selectItem itemLabel="Sobradinho" itemValue="" />
+                            <f:selectItem itemLabel="Sobradinho II" itemValue="" />
+                            <f:selectItem itemLabel="Sudoeste e Octogonal" itemValue="" />
+                            <f:selectItem itemLabel="Taguatinga" itemValue="" />
+                            <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
+                            <f:selectItem itemLabel="Varjão" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 02-->
+
+                <p:panel id="questão2" header="2) Escola em que concluio o Ensino Medio: " style="margin-bottom:5px;"> 
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputLabel value="Nome: " for="escolaConc" />
+
+                        <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+
+                        <h:outputLabel value="Local:  " for="escolaConcLocal" />
+                        <p:inputText id="escolaConcLocal" label="escolaConcLocal" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+
+                </p:panel> 
+
+
+                <!--QUESTÃO 03-->
+
+                <p:panel id="questão3" header="3) Fez Cursinho pré-vestibular, após o Ensino Medio ?" style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                        <p:separator /> 
+
+                        <h:outputLabel value="Se afirmativo, onde ? " for="cusinho" />
+                        <p:inputText id="cursinho" label="cursinho" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+
+                        <p:separator /> 
+
+                        <h:outputText value="Por quanto tempo ? " />
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="1 Semestre" itemValue="1semestre" />
+                            <f:selectItem itemLabel="Menos de 1 semestre" itemValue="menosAno" />
+                            <f:selectItem itemLabel="1 ano" itemValue="1ano" />
+                            <f:selectItem itemLabel="Mais de um ano" itemValue="maisAno" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel> 
+
+                <!--QUESTÃO 04-->
+
+                <p:panel id="questão4" header="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 05-->
+
+                <p:panel id="questão5" header="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <h:outputText value="" />
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>  <h:outputText value="5B) Se afirmativo, qual cidade ?" />
+                        <p:selectOneMenu  effect="drop" height="250">
+                            <f:selectItem itemLabel="Selecione a sua cidade:" itemValue=""/>
+                            <f:selectItem itemLabel="Ceilandia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Cidade Ocidental/GO" itemValue="" />
+                            <f:selectItem itemLabel="Gama" itemValue="" />
+                            <f:selectItem itemLabel="Luziania/GO" itemValue="" />
+                            <f:selectItem itemLabel="Novo gama/GO" itemValue="" />
+                            <f:selectItem itemLabel="Recanto das Emas" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo" itemValue="" />
+                            <f:selectItem itemLabel="Riacho Fundo II" itemValue="" />
+                            <f:selectItem itemLabel="Samambaia" itemValue="" />
+                            <f:selectItem itemLabel="Santa Maria" itemValue="" />
+                            <f:selectItem itemLabel="Santo Antonio do Descoberto/GO" itemValue="" />
+                            <f:selectItem itemLabel="São sebastião" itemValue="" />
+                            <f:selectItem itemLabel="Valparaízo/GO" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+
+                </p:panel>
+
+
+                <!--QUESTÃO 06-->
+
+                <p:panel id="questão6" header="6) Estado civil: " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="210">
+                            <f:selectItem itemLabel="Selecione o estado civil" itemValue=""/>
+                            <f:selectItem itemLabel="Solteiro" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Casado" itemValue="" />
+                            <f:selectItem itemLabel="Separado" itemValue="" />
+                            <f:selectItem itemLabel="Desquitado" itemValue="" />
+                            <f:selectItem itemLabel="Divorciado" itemValue="" />
+                            <f:selectItem itemLabel="Viuvo" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 07-->
+
+                <p:panel id="questão7" header="7) Quantidade de irmão que você possui: " style="margin-bottom:5px;">              
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="Um" itemValue="" />
+                            <f:selectItem itemLabel="Dois" itemValue="" />
+                            <f:selectItem itemLabel="Três" itemValue="" />
+                            <f:selectItem itemLabel="Quatro ou mais" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 08-->
+
+                <p:panel id="questão8" header="8) Quantidade de filhos que você possui:  " style="margin-bottom:5px;">              
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="Um" itemValue="" />
+                            <f:selectItem itemLabel="Dois" itemValue="" />
+                            <f:selectItem itemLabel="Três" itemValue="" />
+                            <f:selectItem itemLabel="Quatro ou mais" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 09-->
+
+                <p:panel id="questão9" header="9) Voce se define como ?  " style="margin-bottom:5px;">              
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <p:selectOneMenu  effect="drop" height="210">
+                            <f:selectItem itemLabel="Selecione a opção    " itemValue=""/>
+                            <f:selectItem itemLabel="Branco" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Negro" itemValue="" />
+                            <f:selectItem itemLabel="Pardo/Mulato" itemValue="" />
+                            <f:selectItem itemLabel="Amarelo" itemValue="" />
+                            <f:selectItem itemLabel="Ocidental" itemValue="" />
+                            <f:selectItem itemLabel="Indigena" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 10-->
+                <p:panel id="questão10" header="10) Situação da moradia atual: ?  " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="210" style="width: 200px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Com os pais" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Com outros familiares" itemValue="" />
+                            <f:selectItem itemLabel="Com esposo(a)/filho(a)" itemValue="" />
+                            <f:selectItem itemLabel="Amigos" itemValue="" />
+                            <f:selectItem itemLabel="Alojamento Universitario" itemValue="" />
+                            <f:selectItem itemLabel="Sozinho" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 11-->
+
+                <p:panel  id="questão11" header="11) Estimativa média de renda mensal em sua casa. (1 salário-mínimo = R$ 465,00)" style="margin-bottom:5px;">              
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <p:selectOneMenu  effect="drop" height="140" style="width: 280px">
+                            <f:selectItem itemLabel="Até 3 salários-mínimos " itemValue=""/>
+                            <f:selectItem itemLabel="De 3 a 10 salários-mínimos" itemValue="Option 3" />
+                            <f:selectItem itemLabel="De 10 a 20 salários-mínimos" itemValue="" />
+                            <f:selectItem itemLabel="De 20 a 30 salários-mínimos" itemValue="" />
+                            <f:selectItem itemLabel="Mais de 30 salários-mínimos" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 12-->
+
+                <p:panel  id="questão12" header="12) Quantas pessoas moram com você ?" style="margin-bottom:5px;">              
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <p:selectOneMenu  effect="drop" height="160">
+                            <f:selectItem itemLabel="Selecione a opção    " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Uma ou duas" itemValue="" />
+                            <f:selectItem itemLabel="Três ou quatro" itemValue="" />
+                            <f:selectItem itemLabel="Cinco ou seis" itemValue="" />
+                            <f:selectItem itemLabel="Mais que seis" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 13-->
+
+                <p:panel  id="questão13" header="13) Em relação ao trabalho: " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Não trabalho, sou sustentado pela familia" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Trabalho e recebo ajuda da família" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e me sustento" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e a familia me sustenta" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho e sou o responsavel pelo sustento da familia" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 14-->
+
+                <p:panel  id="questão14" header="14) Se você trabalha qual é a carga horária semanal da atividade?" style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Não exerço atividade remunerada" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Trabalho eventualmente" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho até 20 horas" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho mais de 20 horas e menos de 40 horas" itemValue="" />
+                            <f:selectItem itemLabel="Trabalho em tempo integral – 40 horas " itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 15-->
+
+                <p:panel  id="questão15" header="15) Grau de escolaridade do seu pai: " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma escolaridade" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 1ª a 4ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 5ª a 8ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Médio" itemValue="" />
+                            <f:selectItem itemLabel="Superior " itemValue="" />
+                            <f:selectItem itemLabel="Pós-graduação" itemValue="" />
+                            <f:selectItem itemLabel="Desconheço" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 16-->
+
+                <p:panel  id="questão16" header="16) Grau de escolaridade do seu mae:  " style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="200" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhuma escolaridade" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 1ª a 4ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Fundamental: de 5ª a 8ª série" itemValue="" />
+                            <f:selectItem itemLabel="Ensino Médio" itemValue="" />
+                            <f:selectItem itemLabel="Superior " itemValue="" />
+                            <f:selectItem itemLabel="Pós-graduação" itemValue="" />
+                            <f:selectItem itemLabel="Desconheço" itemValue="" />
+                        </p:selectOneMenu>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 17-->
+
+                <p:panel  id="questão17" header="17) Você cursou o Ensino Médio" style="margin-bottom:5px;">              
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Todo em escola pública" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Todo em escola privada" itemValue="" />
+                            <f:selectItem itemLabel="Maior parte em escola pública" itemValue="" />
+                            <f:selectItem itemLabel="Maior parte em escola privada" itemValue="" />
+                            <f:selectItem itemLabel="Metade em escola pública e metade em particular" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 18-->
+
+                <p:panel  id="questão18" header="18) Seu curso de ensino médio era " style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Ensino Médio regular" itemValue="Option 3" />
+                            <f:selectItem itemLabel="Ensino médio técnico profissionalizante " itemValue="" />
+                            <f:selectItem itemLabel="Magistério (Curso Normal)" itemValue="" />
+                            <f:selectItem itemLabel="Educação de Jovens e Adultos – EJA" itemValue="" />
+                            <f:selectItem itemLabel="Supletivo" itemValue="" />
+                            <f:selectItem itemLabel="Outro" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 19-->
+
+                <p:panel  id="questão19" header="19) Você domina algum idioma estrangeiro? Qual(is) ?" style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" width="700" cellpadding="5">
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="A) Ingles " />
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+                        </p:selectManyCheckbox>
+
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="B) Espanhol " />
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+
+                        </p:selectManyCheckbox>
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="C) Frances " />
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+
+                        </p:selectManyCheckbox>
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="D) Alemao " />
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+
+                        </p:selectManyCheckbox>
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <h:outputText value="E) Outro "  /> <p:inputText/>
+
+                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Escreve" itemValue="" />
+                            <f:selectItem itemLabel="Fala" itemValue="" />
+
+                        </p:selectManyCheckbox>
+
+                    </h:panelGrid>
+
+                </p:panel>
+
+
+
+                <!--QUESTÃO 20-->
+
+                <p:panel  id="questão20" header="20)  Além dos livros escolares, quantos livros você lê, em média, por ano? " style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputText value="" />
+                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                            <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                            <f:selectItem itemLabel="No Maximo dois" itemValue="" />
+                            <f:selectItem itemLabel="Entre tres e cinco" itemValue="" />
+                            <f:selectItem itemLabel="Entre seis e oito" itemValue="" />
+                            <f:selectItem itemLabel="Oito ou mais" itemValue="" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 21-->
+
+                <p:panel  id="questão21" header="21) Quais os tipos de livros que você mais lê? ?" style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Obras literárias de ficção  " itemValue="" />
+                            <f:selectItem itemLabel="Obras literárias de ficção" itemValue="" />
+                            <f:selectItem itemLabel="Livros técnicos" itemValue="" />
+                            <f:selectItem itemLabel="Livros de auto-ajuda" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 22-->
+
+                <p:panel  id="questão22" header="22)Que meio você mais utiliza para se manter atualizado sobre os acontecimentos do mundo contemporâneo?" style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Jornais " itemValue="" />
+                            <f:selectItem itemLabel="Revistas" itemValue="" />
+                            <f:selectItem itemLabel="TV" itemValue="" />
+                            <f:selectItem itemLabel="Rádio" itemValue="" />
+                            <f:selectItem itemLabel="Internet" itemValue="" />
+                        </p:selectManyCheckbox>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 23-->
+
+                <p:panel  id="questão23" header="23) Com que freqüência você lê jornal?" style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Diariamente" itemValue="" />
+                            <f:selectItem itemLabel="Algumas vezes por semana" itemValue="" />
+                            <f:selectItem itemLabel="Somente ao domingos" itemValue="" />
+                            <f:selectItem itemLabel="Raramente" itemValue="" />
+                            <f:selectItem itemLabel="Nunca (Vá para a questão 25)" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid> 
+                </p:panel>
+
+                <!--QUESTÃO 24-->
+
+                <p:panel  id="questão24" header="24) Quais os assuntos dos jornais que você mais lê? "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Todos os assuntos " itemValue="" />
+                            <f:selectItem itemLabel="Política e/ou Economia" itemValue="" />
+                            <f:selectItem itemLabel="Cultura e Arte" itemValue="" />
+                            <f:selectItem itemLabel="Esportes" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 25-->
+
+                <p:panel  id="questão25" header="25) Quantas horas por semana, aproximadamente, você costuma dedicar aos estudos, sem contar as horas de aula? "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhuma, apenas assisto às aulas" itemValue="" />
+                            <f:selectItem itemLabel="De uma a duas horas" itemValue="" />
+                            <f:selectItem itemLabel="Três a cinco horas" itemValue="" />
+                            <f:selectItem itemLabel="Seis a oito horas" itemValue="" />
+                            <f:selectItem itemLabel="Mais de oito horas" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid> 
+                </p:panel>
+
+                <!--QUESTÃO 26-->
+
+                <p:panel  id="questão26" header="26) Das atividades artístico-culturais listadas abaixo, qual constitui sua preferência para o lazer? "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Cinema " itemValue="" />
+                            <f:selectItem itemLabel="Teatro" itemValue="" />
+                            <f:selectItem itemLabel="Música" itemValue="" />
+                            <f:selectItem itemLabel="Dança" itemValue="" />
+                            <f:selectItem itemLabel="Exposições" itemValue="" />
+                            <f:selectItem itemLabel="Nenhuma" itemValue="" />
+                            <f:selectItem itemLabel="Outra" itemValue="" />
+                        </p:selectManyCheckbox>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 27-->
+
+                <p:panel  id="questão27" header="27) Seu conhecimento de informática é "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Muito bom" itemValue="" />
+                            <f:selectItem itemLabel="Bom" itemValue="" />
+                            <f:selectItem itemLabel="Razoável" itemValue="" />
+                            <f:selectItem itemLabel="Pouco" itemValue="" />
+                            <f:selectItem itemLabel="Nenhum" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid> 
+                </p:panel>
+
+                <!--QUESTÃO 28-->
+
+                <p:panel  id="questão28" header="28) Você possui computador em sua casa?"  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid> 
+                </p:panel>
+
+                <!--QUESTÃO 29-->
+
+                <p:panel  id="questão29" header="29) Você possui acesso à internet em sua casa? "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 30-->
+
+                <p:panel  id="questão30" header="30) Se não, de onde você acessa a internet ? "  style="margin-bottom:5px;">     
+
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Lan House " itemValue="" />
+                            <f:selectItem itemLabel="Trabalho" itemValue="" />
+                            <f:selectItem itemLabel="Casa de parentes" itemValue="" />
+                            <f:selectItem itemLabel="Não acesso" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 31-->
+
+                <p:panel  id="questão31" header="31)  Com que freqüência você utiliza computador?  "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                    <p:selectOneRadio>
+                        <f:selectItem itemLabel="Várias vezes ao dia" itemValue="" />
+                        <f:selectItem itemLabel="Uma vez ao dia" itemValue="" />
+                        <f:selectItem itemLabel="Três vezes por semena" itemValue="" />
+                        <f:selectItem itemLabel="Uma vez por mês" itemValue="" />
+                        <f:selectItem itemLabel="Nunca" itemValue="" />
+                    </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 32-->
+
+                <p:panel  id="questão32" header="32) Costuma utilizar o computador para? "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="2" cellpadding="5">
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Entreterimento" itemValue="" />
+                            <f:selectItem itemLabel="Trabalhos escolares" itemValue="" />
+                            <f:selectItem itemLabel="Trabalhos profissionais" itemValue="" />
+                            <f:selectItem itemLabel="E-mail" itemValue="" />
+                            <f:selectItem itemLabel="Operações bancárias" itemValue="" />
+                            <f:selectItem itemLabel="Compras Eletrönucas" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 33-->
+
+                <p:panel  id="questão33" header="33) Você possui automóvel e/ou motocicleta? "  style="margin-bottom:5px;">           
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Sim" itemValue="" />
+                            <f:selectItem itemLabel="Não" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel>
+
+
+                <!--QUESTÃO 34-->
+
+
+                <p:panel  id="questão34" header="34) Que tipo de meio de transporte pretende usar para chegar ao campus do Gama?"  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                        <p:selectManyCheckbox value="#{formBean}">
+                            <f:selectItem itemLabel="Automóvel próprio" itemValue="" />
+                            <f:selectItem itemLabel="Automóvel da família" itemValue="" />
+                            <f:selectItem itemLabel="Ônibus " itemValue="" />
+                            <f:selectItem itemLabel="Motocicleta" itemValue="" />
+                            <f:selectItem itemLabel="Transporte escolar" itemValue="" />
+                            <f:selectItem itemLabel="Bicicleta" itemValue="" />
+                            <f:selectItem itemLabel="Outros" itemValue="" />
+                        </p:selectManyCheckbox>
+
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 35-->
+
+                <p:panel  id="questão35" header="35) Você recebe alguma ajuda financeira mensal (mesada, bolsa ou outros)? "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                        <p:separator/>
+
+                        <h:outputLabel value="Se afirmativo, Quanto ? " for="cusinho" />
+                        <p:inputText id="qntAjuda" label="qntAjuda" value="" size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+                </p:panel>
+
+                <!--QUESTÃO 36-->
+
+                <p:panel  id="questão36" header="36)  O imóvel em que você mora é ? "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Próprio (seu ou dos pais)" itemValue="" />
+                            <f:selectItem itemLabel="Alugado" itemValue="" />
+                            <f:selectItem itemLabel="Funcional" itemValue="" />
+                            <f:selectItem itemLabel="Emprestado" itemValue="" />
+                            <f:selectItem itemLabel="Nunca" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel>    
+
+                <!--QUESTÃO 37-->
+
+                <p:panel  id="questão37" header="37)  Sua principal prática esportiva é ? "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Nenhuma" itemValue="" />
+                            <f:selectItem itemLabel="Futebol" itemValue="" />
+                            <f:selectItem itemLabel="Ginástica" itemValue="" />
+                            <f:selectItem itemLabel="Voleibol" itemValue="" />
+                            <f:selectItem itemLabel="Musculação" itemValue="" />
+                            <f:selectItem itemLabel="Balé" itemValue="" />
+                            <f:selectItem itemLabel="Hipismo" itemValue="" />
+                            <f:selectItem itemLabel="Dança" itemValue="" />
+                            <f:selectItem itemLabel="Ciclismo" itemValue="" />
+                            <f:selectItem itemLabel="Handebol" itemValue="" />
+                            <f:selectItem itemLabel="Natação" itemValue="" />
+                            <f:selectItem itemLabel="Lutas" itemValue="" />
+                            <f:selectItem itemLabel="Outra" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel>    
+
+                <!--QUESTÃO 38-->
+
+                <p:panel  id="questão38" header="38) Você já fez ou faz outor curso superior ?  "  style="margin-bottom:5px;">     
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+                        <p:selectOneRadio >
+                            <f:selectItem itemLabel="Sim" itemValue="sim" />
+                            <f:selectItem itemLabel="Não" itemValue="nao" />
+                        </p:selectOneRadio>
+
+                        <p:separator/>
+
+                        <h:outputLabel value="Se afirmativo, Qual ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+
+                        <p:separator/>
+
+                        <h:outputLabel value="Instituição ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+
+                        <p:separator/>
+
+                        <h:outputLabel value="Ano de conclusão ? " for="cusinho" />
+                        <p:inputText size="35"
+                                     maxlength="45" required="" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
+                            <f:validateLength minimum="3" maximum="45" />
+                        </p:inputText>
+                    </h:panelGrid>
+                </p:panel>                    
+
+                <!--QUESTÃO 39-->
+
+                <p:panel  id="questão39" header="39) Qual sua preferência em relação às especialidades do curso de  Engenharia ? "  style="margin-bottom:5px;"> 
+                    <h:panelGrid columns="1" cellpadding="5" width="900">
+
+                        <p:selectOneRadio>
+                            <f:selectItem itemLabel="Engenharia Automotiva" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia Eletrônica" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia de Energia" itemValue="" />
+                            <f:selectItem itemLabel="Engenharia de Software" itemValue="" />
+                        </p:selectOneRadio>
+
+                    </h:panelGrid>
+                </p:panel>
+
+
+
+                <h:outputText value="Agradecemos sua contribuição! " style="text-align: center; margin-left: 420px;font-style: italic;font-size: 12pt" />
+
+                <!--FIM- DO QUESTIONÁRIO-->
+
+                <p:button value="Enviar" style="margin-left: 820px;margin-top: 45px">
+
+                </p:button>
+
+            </p:tab >           
+        </p:tabView > 
+    </h:body>
+</html>
+
