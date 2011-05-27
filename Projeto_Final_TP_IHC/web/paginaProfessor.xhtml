@@ -18,7 +18,7 @@
 
     
     
-    <h:body style="font-size: 12px;background-image:url(Images/imagem.jpg)">
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
     
          <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px">  
 
@@ -39,17 +39,34 @@
                     
                 
                  <h:outputText value="Sexo:" />  
-                <p:pieChart value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+                 <p:pieChart value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
 
                  <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" />  
-                <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+                <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
 
                 <h:outputText value="Quantidade de irmão que você possui:" />  
-                <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px" />
+                <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
 
                 <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ?" />  
-                <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="225px"  />
+                <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
+                
+                <h:outputText value="Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ?" />  
+                <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
 
+                <h:outputText value="Quantidade de filhos que você possui:" />  
+                <p:pieChart value="#{chartBeanFilhos.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                
+                <h:outputText value="Quais os tipos de livros que você mais lê? ?" />  
+                <p:pieChart value="#{chartBeanLivrosTipo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                
+                <h:outputText value="Que meio você mais utiliza para se manter atualizado sobre os acontecimentos do mundo contemporâneo?" />  
+                <p:pieChart value="#{chartBeanAtualizado.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                
+                <h:outputText value="Com que freqüência você lê jornal? " />  
+                <p:pieChart value="#{chartBeanFreqJornal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                
+                <h:outputText value="Quais os assuntos dos jornais que você mais lê? " />  
+                <p:pieChart value="#{chartBeanMaisLe.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
                 
                 
                 </h:panelGrid>
