@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:p="http://primefaces.prime.com.tr/ui"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
@@ -36,39 +37,52 @@
                 <p:graphicText value="Graficos obtidos pelos questionarios" fontName="Courier New" fontStyle="bold" fontSize="18" />
                     
                 <h:panelGrid border="5" columns="2">
+
+
+                    <p:panel header="Sexo: " widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" live="true" width="325px"/>
+                    </p:panel>
                     
-                
-                 <h:outputText value="Sexo:" />  
-                 <p:pieChart value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
+                    <p:panel header="1) Cidade: " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanCidade.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" live="true" width="325px"/>
+                    </p:panel>
+                    
+                    <p:panel header="3) Fez Cursinho pré-vestibular, após o Ensino Medio ?"  widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
+                    </p:panel>
 
-                 <h:outputText value="Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" />  
-                <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    <p:panel header="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
+                    
+                    <p:panel header="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ?" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
+                    </p:panel>
 
-                <h:outputText value="Quantidade de irmão que você possui:" />  
-                <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    <p:panel header="7) Quantidade de irmão que você possui:" widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
 
-                <h:outputText value="Fez Cursinho pré-vestibular, após o Ensino Medio ?" />  
-                <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
-                
-                <h:outputText value="Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ?" />  
-                <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px"  />
+                    <p:panel header="8) Quantidade de filhos que você possui:" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanFilhos.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
 
-                <h:outputText value="Quantidade de filhos que você possui:" />  
-                <p:pieChart value="#{chartBeanFilhos.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
-                
-                <h:outputText value="Quais os tipos de livros que você mais lê? ?" />  
-                <p:pieChart value="#{chartBeanLivrosTipo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
-                
-                <h:outputText value="Que meio você mais utiliza para se manter atualizado sobre os acontecimentos do mundo contemporâneo?" />  
-                <p:pieChart value="#{chartBeanAtualizado.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
-                
-                <h:outputText value="Com que freqüência você lê jornal? " />  
-                <p:pieChart value="#{chartBeanFreqJornal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
-                
-                <h:outputText value="Quais os assuntos dos jornais que você mais lê? " />  
-                <p:pieChart value="#{chartBeanMaisLe.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
-                
-                
+                    <p:panel header="21) Quais os tipos de livros que você mais lê? ?" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanLivrosTipo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
+
+                    <p:panel header="22) Que meio você mais utiliza para se manter atualizado sobre os acontecimentos do mundo contemporâneo?"  widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanAtualizado.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
+
+                    <p:panel header="23) Com que freqüência você lê jornal? " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanFreqJornal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
+
+                    <p:panel header="24) Quais os assuntos dos jornais que você mais lê? " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanMaisLe.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" />
+                    </p:panel>
+
                 </h:panelGrid>
             </p:tab>  
              <p:tab title="Nova Questão">
