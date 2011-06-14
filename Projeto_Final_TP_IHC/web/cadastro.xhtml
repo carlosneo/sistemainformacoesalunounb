@@ -22,12 +22,12 @@
         <h:form>
             <p:panel header="Cadastro De Aluno " style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
                 <h:panelGrid columns="2"  cellspacing="25px">   
-                    <h:outputText value="Nome:" />  
-                    <p:inputText />  
+                    <h:outputText value="Nome:" />   
+                        <p:keyboard /> 
                     <h:outputText value="Matricula:" />  
-                    <p:inputText />  
+                    <p:keyboard keypadOnly="true" /> 
                     <h:outputText value="Senha:" />  
-                    <p:password  feedback="true"  minLength="5" />  
+                    <p:password  feedback="true"  minLength="5" />
                     <p:button value="Cadastrar" />
 
 
@@ -36,5 +36,9 @@
         </h:form>
     
     </h:body>
+    
+     <footer>
+         <p:menubar style="margin-top: 100px" />
+    </footer>
 </html>
 
