@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+     <h:head>
+        <title>Pagina do Professor</title>
+        
+        <script type="text/javascript">
+                var chartStyle = {
+                padding:20,
+                legend:{
+                display:"left",
+                spacing:10
+                }
+                
+                };
+        </script>
+        
+    </h:head>
+    
+    <h:form>
+
+             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+             </p:menubar>
+
+         </h:form>
+
+    
+    
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+    
+         <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px">  
+
+            <p:tab title="Inicio">  
+                <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
+                          
+                    <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
+                                  Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
+                                  Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
+                                  visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
+                </h:panelGrid>  
+            </p:tab>  
+            <p:tab title="Estatisticas" >  
+                
+                <p:graphicText value="Graficos obtidos pelos questionarios" fontName="Courier New" fontStyle="bold" fontSize="18" />
+                    
+                <h:panelGrid  columns="2">
+
+
+                    <p:panel header="Sexo: " widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px"/>
+                    </p:panel>
+                                      
+                    <p:panel header="1) Cidade: " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanCidade.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px"/>
+                    </p:panel>
+                    
+                    <p:panel header="3) Fez Cursinho pré-vestibular, após o Ensino Medio ?"  widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+
+                    <p:panel header="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle"/>
+                    </p:panel>
+                    
+                    <p:panel header="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ?" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" style="chartStyle" />
+                    </p:panel>
+
+                    <p:panel header="7) Quantidade de irmão que você possui:" widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+
+                    <p:panel header="8) Quantidade de filhos que você possui:" widgetVar="panel" >  
+                        <p:pieChart value="#{chartBeanFilhos.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+
+                    <p:panel header="21) Quais os tipos de livros que você mais lê? ?" widgetVar="panel" >   
+                        <p:pieChart value="#{chartBeanLivrosTipo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="420px"  style="chartStyle"/>
+                    </p:panel>
+
+                    <p:panel header="22) Que meio você mais utiliza para se manter atualizado ?"  widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanAtualizado.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle"/>
+                    </p:panel>
+
+                    <p:panel header="23) Com que freqüência você lê jornal? " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanFreqJornal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="420px" style="chartStyle"/>
+                    </p:panel>
+
+                    <p:panel header="24) Quais os assuntos dos jornais que você mais lê? " widgetVar="panel">  
+                        <p:pieChart value="#{chartBeanMaisLe.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+
+                </h:panelGrid>
+            </p:tab>  
+             <p:tab title="Nova Questão">
+                 <h1>
+                     
+                    Em construção
+                     
+                 </h1>
+                 
+                 
+             </p:tab>
+        </p:tabView> 
+    
+    </h:body>
+</html>
+

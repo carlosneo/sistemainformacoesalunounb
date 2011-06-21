@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+     </h:head>
+     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+
+         <h:form>
+
+             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+             </p:menubar>
+
+         </h:form>
+
+
+    <h:form>
+            <p:panel header="Entre com usuario e senha " style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
+                <h:panelGrid columns="2"  cellspacing="25px">   
+                    <h:outputText value="Login" />  
+                    <p:keyboard />   
+                    <h:outputText value="Senha:" />  
+                    <p:password  feedback=""  minLength="5" />  
+                    <p:menubar >
+                         <p:menuitem value="Entrar" url="paginaProfessor.xhtml" />
+                    </p:menubar>
+
+
+                </h:panelGrid>  
+            </p:panel>  
+        </h:form>
+
+    </h:body> 
+
+</html>
+
