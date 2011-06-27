@@ -18,10 +18,10 @@ public class ChartBeanAtualizado {
 
 	public ChartBeanAtualizado() {
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Jornais", 120));
-		sales.add(new Sale("Revistas", 200));
+		sales.add(new Sale("Jornais", 20));
+		sales.add(new Sale("Revistas", 100));
                 sales.add(new Sale("TV", 420));
-		sales.add(new Sale("Rádio", 300));
+		sales.add(new Sale("Rádio", 200));
 		sales.add(new Sale("Internet", 500));
 		
 	}

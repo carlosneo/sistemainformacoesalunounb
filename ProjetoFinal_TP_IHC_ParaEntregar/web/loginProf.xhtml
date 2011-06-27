@@ -20,17 +20,18 @@
 
     <h:form>
             <p:panel header="Entre com usuario e senha " style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
-                <h:panelGrid columns="2"  cellspacing="25px">   
-                    <h:outputText value="Login" />  
-                    <p:keyboard />   
-                    <h:outputText value="Senha:" />  
-                    <p:password  feedback=""  minLength="5" />  
-                    <p:menubar >
-                         <p:menuitem value="Entrar" url="paginaProfessor.xhtml" />
-                    </p:menubar>
-
-
-                </h:panelGrid>  
+           <h:panelGrid columns="3"  cellspacing="25px">   
+                    <h:outputLabel value="Matricula" for="login"/>  
+                    <p:keyboard id="login" value="#{loginBean.login.login}" required="true" requiredMessage="Campo obrigratório" keypadOnly="true"/>
+                    <p:message for="login"/>
+                    <h:outputLabel value="Senha:" for="senha"/>  
+                    <p:password id="senha" feedback=""  minLength="5" value="#{loginBean.login.senha}" required="true" requiredMessage="Campo obrigratório"/>  
+                    <p:message for="senha"/>
+                    <p:commandButton  value="Entrar" actionListener="#{loginBean.login()}" ajax="false" action="paginaProfessor.xhtml" />
+                    
+                    
+                </h:panelGrid> 
+            <p:messages />    
             </p:panel>  
         </h:form>
 

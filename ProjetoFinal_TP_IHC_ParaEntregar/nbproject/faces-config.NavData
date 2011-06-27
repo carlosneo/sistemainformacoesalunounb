@@ -7,8 +7,8 @@
         <Node id="loginProf.xhtml" x="382" y="157" zoom="true"/>
         <Node id="index.xhtml" x="292" y="24" zoom="true"/>
         <Node id="contato.xhtml" x="645" y="161" zoom="true"/>
-        <Node id="loginAluno.xhtml" x="67" y="196" zoom="true"/>
-        <Node id="paginaAlunoV2.xhtml" x="86" y="285" zoom="true"/>
+        <Node id="loginAluno.xhtml" x="78" y="158" zoom="false"/>
+        <Node id="paginaAlunoV2.xhtml" x="86" y="285" zoom="false"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

@@ -18,11 +18,11 @@ public class ChartBeanFreqJornal {
 
 	public ChartBeanFreqJornal() {
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Diariamente", 20));
+		sales.add(new Sale("Diariamente", 6));
 		sales.add(new Sale("Algumas vezes por semana", 50));
-                sales.add(new Sale("Somente Domingos", 120));
+                sales.add(new Sale("Somente Domingos", 100));
 		sales.add(new Sale("Raramente", 250));
-		sales.add(new Sale("Nunca", 90));
+		sales.add(new Sale("Nunca", 50));
 		
 	}
 

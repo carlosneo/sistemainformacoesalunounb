@@ -53,7 +53,7 @@
 
                 <!--QUESTÃO 01-->                
 
-                <p:panel id="questão1" header="1)Local onde mora/vai morar quando começar as aulas: " style="margin-bottom:5px;">  
+                <p:panel id="questão1" header="1) Local onde mora/vai morar quando começar as aulas: " style="margin-bottom:5px;">  
                     <h:panelGrid columns="2" cellpadding="5">
 
                         <p:selectOneMenu  effect="drop" height="250" style="width: 300px">
@@ -112,7 +112,7 @@
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
 
-                        <h:outputLabel value="Local:  " for="escolaConcLocal" />
+                        <h:outputLabel value="Local(cidade) :  " for="escolaConcLocal" />
                         <p:inputText id="escolaConcLocal" label="escolaConcLocal" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
@@ -170,7 +170,7 @@
 
                 <!--QUESTÃO 05-->
 
-                <p:panel id="questão5" header="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ? " style="margin-bottom:5px;">              
+                <p:panel id="questão5" header="5) Ao se inscrever no vestibular, você fez uso do benefício por região administrativa ? " style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="1" cellpadding="5" width="900">
 
@@ -261,7 +261,7 @@
                             <f:selectItem itemLabel="Pardo/Mulato" itemValue="" />
                             <f:selectItem itemLabel="Amarelo" itemValue="" />
                             <f:selectItem itemLabel="Ocidental" itemValue="" />
-                            <f:selectItem itemLabel="Indigena" itemValue="" />
+                            <f:selectItem itemLabel="Indígena" itemValue="" />
                             <f:selectItem itemLabel="Outro" itemValue="" />
                         </p:selectOneMenu>
                     </h:panelGrid>
@@ -374,7 +374,7 @@
 
                 <!--QUESTÃO 16-->
 
-                <p:panel  id="questão16" header="16) Grau de escolaridade do seu mae:  " style="margin-bottom:5px;">              
+                <p:panel  id="questão16" header="16) Grau de escolaridade da sua mãe:  " style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:selectOneMenu  effect="drop" height="200" style="width: 340px">
@@ -431,9 +431,9 @@
                     <h:panelGrid columns="2" width="700" cellpadding="5">
 
                         <p:selectManyCheckbox value="#{formBean}">
-                            <h:outputText value="A) Ingles " />
+                            <h:outputText value="A) Inglês " />
 
-                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Lê  " itemValue="" />
                             <f:selectItem itemLabel="Escreve" itemValue="" />
                             <f:selectItem itemLabel="Fala" itemValue="" />
                         </p:selectManyCheckbox>
@@ -442,25 +442,25 @@
                         <p:selectManyCheckbox value="#{formBean}">
                             <h:outputText value="B) Espanhol " />
 
-                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Lê  " itemValue="" />
                             <f:selectItem itemLabel="Escreve" itemValue="" />
                             <f:selectItem itemLabel="Fala" itemValue="" />
 
                         </p:selectManyCheckbox>
 
                         <p:selectManyCheckbox value="#{formBean}">
-                            <h:outputText value="C) Frances " />
+                            <h:outputText value="C) Francês " />
 
-                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Lê  " itemValue="" />
                             <f:selectItem itemLabel="Escreve" itemValue="" />
                             <f:selectItem itemLabel="Fala" itemValue="" />
 
                         </p:selectManyCheckbox>
 
                         <p:selectManyCheckbox value="#{formBean}">
-                            <h:outputText value="D) Alemao " />
+                            <h:outputText value="D) Alemão " />
 
-                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Lê  " itemValue="" />
                             <f:selectItem itemLabel="Escreve" itemValue="" />
                             <f:selectItem itemLabel="Fala" itemValue="" />
 
@@ -469,7 +469,7 @@
                         <p:selectManyCheckbox value="#{formBean}">
                             <h:outputText value="E) Outro "  /> <p:inputText/>
 
-                            <f:selectItem itemLabel="Le  " itemValue="" />
+                            <f:selectItem itemLabel="Lê  " itemValue="" />
                             <f:selectItem itemLabel="Escreve" itemValue="" />
                             <f:selectItem itemLabel="Fala" itemValue="" />
 
@@ -490,8 +490,8 @@
                         <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
                             <f:selectItem itemLabel="Selecione a opção " itemValue=""/>
                             <f:selectItem itemLabel="Nenhum" itemValue="" />
-                            <f:selectItem itemLabel="No Maximo dois" itemValue="" />
-                            <f:selectItem itemLabel="Entre tres e cinco" itemValue="" />
+                            <f:selectItem itemLabel="No Máximo dois" itemValue="" />
+                            <f:selectItem itemLabel="Entre três e cinco" itemValue="" />
                             <f:selectItem itemLabel="Entre seis e oito" itemValue="" />
                             <f:selectItem itemLabel="Oito ou mais" itemValue="" />
                         </p:selectOneMenu>
@@ -506,7 +506,7 @@
                     <h:panelGrid columns="2" cellpadding="5">
                         <p:selectManyCheckbox value="#{formBean}">
                             <f:selectItem itemLabel="Obras literárias de ficção  " itemValue="" />
-                            <f:selectItem itemLabel="Obras literárias de ficção" itemValue="" />
+                            <f:selectItem itemLabel="Obras literárias de não-ficção" itemValue="" />
                             <f:selectItem itemLabel="Livros técnicos" itemValue="" />
                             <f:selectItem itemLabel="Livros de auto-ajuda" itemValue="" />
                             <f:selectItem itemLabel="Outros" itemValue="" />
@@ -669,7 +669,7 @@
                             <f:selectItem itemLabel="Trabalhos profissionais" itemValue="" />
                             <f:selectItem itemLabel="E-mail" itemValue="" />
                             <f:selectItem itemLabel="Operações bancárias" itemValue="" />
-                            <f:selectItem itemLabel="Compras Eletrönucas" itemValue="" />
+                            <f:selectItem itemLabel="Compras Eletrnicas" itemValue="" />
                             <f:selectItem itemLabel="Outros" itemValue="" />
                         </p:selectManyCheckbox>
 
@@ -723,7 +723,7 @@
 
                         <h:outputLabel value="Se afirmativo, Quanto ? " for="cusinho" />
                         <p:inputText id="qntAjuda" label="qntAjuda" value="" size="35"
-                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite a quantidade!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
@@ -740,7 +740,7 @@
                             <f:selectItem itemLabel="Alugado" itemValue="" />
                             <f:selectItem itemLabel="Funcional" itemValue="" />
                             <f:selectItem itemLabel="Emprestado" itemValue="" />
-                            <f:selectItem itemLabel="Nunca" itemValue="" />
+                            <f:selectItem itemLabel="Outra" itemValue="" />
                         </p:selectOneRadio>
 
                     </h:panelGrid>

@@ -19,8 +19,8 @@ public class ChartBeanCotas  {
 
 	public ChartBeanCotas() {
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Sim", 420));
-		sales.add(new Sale("Não", 50));
+		sales.add(new Sale("Sim", 220));
+		sales.add(new Sale("Não", 577));
 		
 	}
 
