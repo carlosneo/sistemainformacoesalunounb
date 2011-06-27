@@ -32,11 +32,11 @@ public class LoginBean {
         login = new Login();
     }
     
-    public void login() {
+    public String login() {
         if (login.getLogin().equalsIgnoreCase("1045547") && login.getSenha().equals("1234")){
-           
+           return "SUCESSO" ;
         } else {
-            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));
-    }
+             return "ERR0R";
+        }
 }
 }

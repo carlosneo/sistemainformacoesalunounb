@@ -72,6 +72,7 @@ CREATE TABLE livre(
 CREATE TABLE aluno(
   id int not null primary key auto_increment,
   nome varchar(150) not null
+  matricula int not null
 );
   
 

@@ -6,18 +6,25 @@
     xmlns="http://java.sun.com/xml/ns/javaee" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
- <managed-bean>
-        <managed-bean-name>loginBean</managed-bean-name>
-        <managed-bean-class>Controladores.LoginBean</managed-bean-class>
-        <managed-bean-scope>view</managed-bean-scope>
-    </managed-bean>
     <navigation-rule>
-        <from-view-id>/loginAluno.xhtml</from-view-id>
         <navigation-case>
-            <from-action>login</from-action>
+           <from-outcome>SUCESSO</from-outcome>
             <to-view-id>/paginaAlunoV2.xhtml</to-view-id>
-            <redirect/>
         </navigation-case>
     </navigation-rule>
+    
+    <!--
+     <application>
+     <resource-bundle>
+     <base-name>idiomas.idioma</base-name>
+     <var>msg</var>
+  </resource-bundle>
+  <locale-config>
+         <default-locale>pt_BR</default-locale>
+        <supported-locale>en_US</supported-locale>
+  </locale-config>
+  <message-bundle>idiomas.idioma</message-bundle>      
+ </application>
+-->
 
 </faces-config>

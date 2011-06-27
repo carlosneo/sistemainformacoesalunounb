@@ -28,7 +28,7 @@
                     <h:outputLabel value="Senha:" for="senha"/>  
                     <p:password id="senha" feedback=""  minLength="5" value="#{loginBean.login.senha}" required="true" requiredMessage="Campo obrigratório"/>  
                     <p:message for="senha"/>
-                    <p:commandButton  value="Entrar" actionListener="#{loginBean.login()}" ajax="false" action="paginaAlunoV2.xhtml" />
+                    <p:commandButton  value="Entrar" action="#{loginBean.login}" ajax="false"  />
                    </h:panelGrid> 
             <p:messages />  
             </p:panel>  
