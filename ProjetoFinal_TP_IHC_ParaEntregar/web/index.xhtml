@@ -8,8 +8,13 @@
         <title>Olá, Seja Bem Vindo!!!</title>
      </h:head>
     <!-- <p:themeSwitcher initialText="Mudar thema: " buttonPreText="Tema: "/> -->
+    
+     
+    
     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
 
+        <f:view locale ="#{localeController.currentLocale}" />
+        
         <h:form>    
                        
               <p:menubar style=" margin-top: 122px;margin-left: -2px" >
@@ -22,8 +27,8 @@
                 <p:menuitem value="Cadastre-se" icon="ui-icon ui-icon-pencil" url="cadastro.xhtml"/>
                 
                 <p:submenu label="Idioma" icon="ui-icon ui-icon-wrench">
-                    <p:menuitem value="Portugues" />
-                    <p:menuitem value="Ingles"/>
+                    <p:menuitem value="Portugues" action="#{localeController.portugueseLocale}" />
+                    <p:menuitem value="Ingles" action="#{localeController.englishLocale}" />
                 </p:submenu>
                 
                 <p:menuitem value="Contate-nos" icon="ui-icon ui-icon-help" url="contato.xhtml"/>

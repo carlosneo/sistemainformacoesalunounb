@@ -2,9 +2,13 @@
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.text.MessageFormat;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@ManagedBean (name="localeController")
+@SessionScoped
 
 public class LocaleController {
 	private Locale currentLocale = new Locale("pt", "BR");
@@ -14,9 +18,6 @@ public class LocaleController {
 		currentLocale = Locale.US;
 		viewRoot.setLocale(currentLocale);
 	}
-        
-        private static ResourceBundle myResources =
-	      ResourceBundle.getBundle("Messages", Locale.getDefault());
 
 	public void portugueseLocale() {
 		UIViewRoot viewRoot = FacesContext.getCurrentInstance().getViewRoot();

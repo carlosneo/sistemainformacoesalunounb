@@ -7,11 +7,18 @@
     <h:head>
         <title>Pagina do Aluno</title>
      </h:head>
+    
+    <f:view locale ="#{localeController.currentLocale}" />
 
     <h:form>
 
         <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
             <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+        <p:submenu label="Idioma" icon="ui-icon ui-icon-wrench">
+            <p:menuitem value="Portugues" action="#{localeController.portugueseLocale}" update="ppp"/>
+                    <p:menuitem value="Ingles" action="#{localeController.englishLocale}" update="ppp"/>
+        </p:submenu>
+        
         </p:menubar>
 
     </h:form>
@@ -22,7 +29,7 @@
     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
 
 
-        <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
+        <p:tabView id="ppp" effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
             <p:tab title="Seja bem vindo">  
                 <h:panelGrid  columns="2" cellpadding="5" cellspacing="5" width="1500">
@@ -53,7 +60,7 @@
 
                 <!--QUESTÃO 01-->                
 
-                <p:panel id="questão1" header="1msg.prompt.questionario.questao1 " style="margin-bottom:5px;">  
+                <p:panel id="questão1" header="#{msg.promptquestionarioquestao1}" style="margin-bottom:5px;" >  
                     <h:panelGrid columns="2" cellpadding="5">
 
                         <p:selectOneMenu  effect="drop" height="250" style="width: 300px">

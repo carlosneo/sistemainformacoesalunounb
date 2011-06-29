@@ -4,17 +4,11 @@
                         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
                             
-                            
-    <dependency>
-	<groupId>org.primefaces.themes</groupId>
-	<artifactId>aristo</artifactId>
-	<version>1.0.1</version>
-    </dependency>
-    
+     
      
     <context-param>
-	<param-name>primefaces.start</param-name>
-	<param-value>aristo</param-value>
+	<param-name>primefaces.THEME</param-name>
+	<param-value>glass-x</param-value>
     </context-param>
     
     

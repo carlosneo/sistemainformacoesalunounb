@@ -27,7 +27,7 @@
         
     </navigation-rule>
     
-    <!--
+    
      <application>
      <resource-bundle>
      <base-name>idiomas.idioma</base-name>
@@ -37,8 +37,7 @@
          <default-locale>pt_BR</default-locale>
         <supported-locale>en_US</supported-locale>
   </locale-config>
-  <message-bundle>idiomas.idioma</message-bundle>      
+
  </application>
--->
 
 </faces-config>

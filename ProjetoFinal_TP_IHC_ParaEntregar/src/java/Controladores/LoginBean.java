@@ -42,7 +42,7 @@ public class LoginBean {
     }
     
        public String loginProf() {
-        if (login.getLogin().equalsIgnoreCase("1234") && login.getSenha().equals("1234")){
+        if (login.getLogin().equalsIgnoreCase("") && login.getSenha().equals("1234")){
            return "SUCESSOprof" ;
         } else {
             FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));
