@@ -5,37 +5,43 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
-        <title>Contato</title>
+        <title>#{msg.promptcontatomenu1}</title>
      </h:head>
 
     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
-
+        
+        <f:view locale ="#{localeController.currentLocale}" />
 
         <h:form>
 
-            <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
-                <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+            <p:menubar id="menuContato" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                <p:menuitem value="#{msg.promptcontatomenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                
+                <p:submenu label="#{msg.promptcontatomenu3}" icon="ui-icon ui-icon-wrench">
+                    <p:menuitem value="#{msg.promptcontatomenu4}" action="#{localeController.portugueseLocale}"  update="panelgridContato,menuContato,fieldset" />
+                    <p:menuitem value="#{msg.promptcontatomenu5}" action="#{localeController.englishLocale}" update="panelgridContato,menuContato,fieldset" />
+                </p:submenu>
             </p:menubar>
 
         </h:form>
 
-        <p:fieldset style="margin-right: 800px" legend="Contato">  
-            <h:panelGrid  >  
+        <p:fieldset id="fieldset" style="margin-right: 800px" legend="#{msg.promptcontatomenu6}">  
+            <h:panelGrid id="panelgridContato"  >  
                
 <ul>
-<h3>E-mail :</h3>
-<li> unbgama@unb.br </li>
+<h3>#{msg.promptcontatotexto1}</h3>
+<li>#{msg.promptcontatotexto2}</li>
 
-<h3>Telefones úteis: </h3>
-<li> Secretaria da FGA: (61) 3484-9701 / 3484-9719</li>
-<li>Secretaria unidade FGA/SESC-Gama: (61) 3356-6521</li> 
-<li>Decanato de Extensão: (61) 3384-7368</li> 
-<li>CPD: (61) 3484-9700 / 3484-9718</li>
+<h3>#{msg.promptcontatotexto3}</h3>
+<li>#{msg.promptcontatotexto4}</li>
+<li>#{msg.promptcontatotexto5}</li> 
+<li>#{msg.promptcontatotexto6}</li> 
+<li>#{msg.promptcontatotexto7}</li>
 
-<h3>Endereço:</h3>
-<li>Área Especial 02 Lote 14 Setor Central Gama - DF</li> 
-<li>Caixa postal 8114</li> 
-<li>CEP 72405-610</li>
+<h3>#{msg.promptcontatotexto8}</h3>
+<li>#{msg.promptcontatotexto9}</li> 
+<li>#{msg.promptcontatotexto10}</li> 
+<li>#{msg.promptcontatotexto11}</li>
 
 
 

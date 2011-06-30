@@ -5,29 +5,36 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Login</title>
+        <title>#{msg.promptcontatomenu1}</title>
      </h:head>
      <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+         
+         <f:view locale ="#{localeController.currentLocale}" />
 
          <h:form>
 
-             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
-                 <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+             <p:menubar id="menuloginprof" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="#{msg.promptloginprof2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                 
+                  <p:submenu label="#{msg.promptloginprof3}" icon="ui-icon ui-icon-wrench">
+                    <p:menuitem value="#{msg.promptloginprof4}" action="#{localeController.portugueseLocale}"  update="panelloginprof,menuloginprof" />
+                    <p:menuitem value="#{msg.promptloginprof5}" action="#{localeController.englishLocale}" update="panelloginprof,menuloginprof" />
+                </p:submenu>
              </p:menubar>
 
          </h:form>
 
 
   <h:form>
-        <p:panel  header="Entre com sua matricula e senha " style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
-            <h:panelGrid columns="3"  cellspacing="25px">   
-                    <h:outputLabel value="Matricula" for="login"/>  
-                    <p:keyboard title ="É a sua matricula da UnB" id="login" value="#{loginBean.login.login}" required="true" requiredMessage="Matricula: Campo obrigratório" keypadOnly="true"/>
+        <p:panel  header="#{msg.promptloginprof6}" style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
+            <h:panelGrid id="panelloginprof" columns="3"  cellspacing="25px">   
+                    <h:outputLabel value="#{msg.promptloginprof7}" for="login"/>  
+                    <p:keyboard title ="#{msg.promptloginprof7subitem1}" id="login" value="#{loginBean.login.login}" required="true" requiredMessage="#{msg.promptloginprof7subitem2}" keypadOnly="true"/>
                     <p:message for="login"/>
-                    <h:outputLabel value="Senha:" for="senha"/>  
-                    <p:password title ="É a sua Senha" id="senha" feedback=""  minLength="5" value="#{loginBean.login.senha}" required="true" requiredMessage="Senha: Campo obrigratório"/>  
+                    <h:outputLabel value="#{msg.promptloginprof8}" for="senha"/>  
+                    <p:password title ="#{msg.promptloginprof8subitem1}" id="senha" feedback=""  minLength="5" value="#{loginBean.login.senha}" required="true" requiredMessage="#{msg.promptloginprof8subitem2}"/>  
                     <p:message for="senha"/>
-                    <p:commandButton  value="Entrar" action="#{loginBean.loginProf}" ajax="false"  />
+                    <p:commandButton  value="#{msg.promptloginprof9}" action="#{loginBean.loginProf}" ajax="false"  />
                    </h:panelGrid> 
             <p:messages />  
             </p:panel>  

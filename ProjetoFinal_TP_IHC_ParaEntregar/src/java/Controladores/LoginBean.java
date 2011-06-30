@@ -36,13 +36,13 @@ public class LoginBean {
         if (login.getLogin().equalsIgnoreCase("1045547") && login.getSenha().equals("1234")){
            return "SUCESSOaluno" ;
         } else {
-            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));
+            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"#{msg.promptloginalunomenu7}", "#{msg.promptloginalunomenu8}"));
             return "ERROaluno";
         } 
     }
     
        public String loginProf() {
-        if (login.getLogin().equalsIgnoreCase("") && login.getSenha().equals("1234")){
+        if (login.getLogin().equalsIgnoreCase("1234") && login.getSenha().equals("1234")){
            return "SUCESSOprof" ;
         } else {
             FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));

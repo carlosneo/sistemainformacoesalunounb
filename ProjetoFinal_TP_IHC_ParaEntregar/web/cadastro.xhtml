@@ -5,30 +5,37 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
     <h:head>
-        <title>Cadastro</title>
+        <title>#{msg.promptcadastromenu1}</title>
      </h:head>
     
        
     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+        
+        <f:view locale ="#{localeController.currentLocale}" />
     
        <h:form>
 
-             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
-                 <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+             <p:menubar id="menubarCadastro" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="#{msg.promptcadastromenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                 
+                 <p:submenu label="#{msg.promptcadastromenu3}" icon="ui-icon ui-icon-wrench">
+                    <p:menuitem value="#{msg.promptcadastromenu4}" action="#{localeController.portugueseLocale}"  update="menubarCadastro,panelgridCadastro" />
+                    <p:menuitem value="#{msg.promptcadastromenu5}" action="#{localeController.englishLocale}" update="menubarCadastro,panelgridCadastro" />
+                </p:submenu>
              </p:menubar>
 
          </h:form>
         
         <h:form>
-            <p:panel header="Cadastro De Aluno " style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
-                <h:panelGrid columns="2"  cellspacing="25px">   
-                    <h:outputText value="Nome:" />   
+            <p:panel header="#{msg.promptcadastromenu6}" style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
+                <h:panelGrid id="panelgridCadastro" columns="2"  cellspacing="25px">   
+                    <h:outputText value="#{msg.promptcadastromenu7}" />   
                         <p:keyboard /> 
-                    <h:outputText value="Matricula:" />  
+                    <h:outputText value="#{msg.promptcadastromenu8}" />  
                     <p:keyboard keypadOnly="true" /> 
-                    <h:outputText value="Senha:" />  
+                    <h:outputText value="#{msg.promptcadastromenu9}" />  
                     <p:password  feedback="true"  minLength="5" />
-                    <p:button value="Cadastrar" />
+                    <p:button value="#{msg.promptcadastromenu10}" />
 
 
                 </h:panelGrid>  

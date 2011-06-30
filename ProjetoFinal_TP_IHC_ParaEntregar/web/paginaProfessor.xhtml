@@ -6,7 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
      <h:head>
-        <title>Pagina do Professor</title>
+        <title>#{msg.promptpaginaprofessormenu1}</title>
         
         <script type="text/javascript">
                 var chartStyle = {
@@ -21,10 +21,18 @@
         
     </h:head>
     
+    <f:view locale ="#{localeController.currentLocale}" />
+    
     <h:form>
 
-             <p:menubar style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
-                 <p:menuitem value="Pagina Principal" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+             <p:menubar id="menupaginaprofessor" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="#{msg.promptpaginaprofessormenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                 
+                  <p:submenu label="#{msg.promptpaginaprofessormenu3}" icon="ui-icon ui-icon-wrench">
+                    <p:menuitem value="#{msg.promptpaginaprofessormenu4}" action="#{localeController.portugueseLocale}"  update="menupaginaprofessor,panelpaginaprofessor" />
+                    <p:menuitem value="#{msg.promptpaginaprofessormenu5}" action="#{localeController.englishLocale}" update="menupaginaprofessor,panelpaginaprofessor" />
+                </p:submenu>
+                 
              </p:menubar>
 
          </h:form>
@@ -33,74 +41,71 @@
     
     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
     
-         <p:tabView effect="opacity" effectDuration="normal" style=" margin-right: 25px">  
+         <p:tabView id="panelpaginaprofessor" effect="opacity" effectDuration="normal" style=" margin-right: 25px">  
 
-            <p:tab title="Inicio">  
-                <h:panelGrid  columns="1" cellpadding="10" cellspacing="5">  
+            <p:tab title="#{msg.promptpaginaprofessormenu6}">  
+                <h:panelGrid columns="1" cellpadding="10" cellspacing="5">  
                           
-                    <h:outputText value="Este Programa tem como objetivo fazer uma identificação do perfil dos estudantes da UnB. 
-                                  Para isso, no início do 1° semestre a ser cursado pelo aluno, é solicitado que cada aluno preencha este questionário. 
-                                  Por meio deste poderemos conhecer melhor nossos alunos e propor ações de apoio para a sua vivência universitária, 
-                                  visando a melhoria da qualidade de ensino e dos procedimentos didáticopedagógicos. " />  
+                    <h:outputText value="#{msg.promptpaginaprofessormenu7}" />  
                 </h:panelGrid>  
             </p:tab>  
-            <p:tab title="Estatisticas" >  
+            <p:tab title="#{msg.promptpaginaprofessormenu8}" >  
                 
-                <p:graphicText value="Graficos obtidos pelos questionarios" fontName="Courier New" fontStyle="bold" fontSize="18" />
+                <p:graphicText value="#{msg.promptpaginaprofessormenu9}" fontName="Courier New" fontStyle="bold" fontSize="18" />
                     
                 <h:panelGrid  columns="2">
 
 
-                    <p:panel header="Sexo: " widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu10}" widgetVar="panel">  
                         <p:pieChart id="sexo" value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
                                       
-                    <p:panel header="1) Cidade: " widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu11}" widgetVar="panel">  
                         <p:pieChart value="#{chartBeanCidade.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px"/>
                     </p:panel>
                     
-                    <p:panel header="3) Fez Cursinho pré-vestibular, após o Ensino Medio ?"  widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu12}"  widgetVar="panel">  
                         <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
 
-                    <p:panel header="4) Ao se inscrever no vestibular, você fez uso do sistema de cotas para negros ?" widgetVar="panel" >  
+                    <p:panel header="#{msg.promptpaginaprofessormenu13}" widgetVar="panel" >  
                         <p:pieChart value="#{chartBeanCotas.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle"/>
                     </p:panel>
                     
-                    <p:panel header="5) Ao se inscrever no vestibular, você fez uso do beneficio por região administrativa ?" widgetVar="panel" >  
+                    <p:panel header="#{msg.promptpaginaprofessormenu14}" widgetVar="panel" >  
                         <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" style="chartStyle" />
                     </p:panel>
 
-                    <p:panel header="7) Quantidade de irmão que você possui:" widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu15}" widgetVar="panel">  
                         <p:pieChart value="#{chartBeanIrmao.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
 
-                    <p:panel header="8) Quantidade de filhos que você possui:" widgetVar="panel" >  
+                    <p:panel header="#{msg.promptpaginaprofessormenu16}" widgetVar="panel" >  
                         <p:pieChart value="#{chartBeanFilhos.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
 
-                    <p:panel header="21) Quais os tipos de livros que você mais lê? ?" widgetVar="panel" >   
+                    <p:panel header="#{msg.promptpaginaprofessormenu17}" widgetVar="panel" >   
                         <p:pieChart value="#{chartBeanLivrosTipo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="420px"  style="chartStyle"/>
                     </p:panel>
 
-                    <p:panel header="22) Que meio você mais utiliza para se manter atualizado ?"  widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu18}"  widgetVar="panel">  
                         <p:pieChart value="#{chartBeanAtualizado.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle"/>
                     </p:panel>
 
-                    <p:panel header="23) Com que freqüência você lê jornal? " widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu19}" widgetVar="panel">  
                         <p:pieChart value="#{chartBeanFreqJornal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="420px" style="chartStyle"/>
                     </p:panel>
 
-                    <p:panel header="24) Quais os assuntos dos jornais que você mais lê? " widgetVar="panel">  
+                    <p:panel header="#{msg.promptpaginaprofessormenu20}" widgetVar="panel">  
                         <p:pieChart value="#{chartBeanMaisLe.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
 
                 </h:panelGrid>
             </p:tab>  
-             <p:tab title="Nova Questão">
+             <p:tab title="#{msg.promptpaginaprofessormenu21}">
                  <h1>
                      
-                    Em construção
+                    #{msg.promptpaginaprofessormenu22}
                      
                  </h1>
                  
