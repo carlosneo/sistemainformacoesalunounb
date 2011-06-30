@@ -110,9 +110,9 @@
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="#{msg.promptquestionarioquestao2texto1}" for="escolaConc" />
 
-                        <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
+                        <p:inputText id="escolaConc" label="EscolaConc" value="#{questionarioBean.questao2Item1}" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
-                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!"  >
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
 
@@ -833,7 +833,7 @@
 
                 <!--FIM- DO QUESTIONÁRIO-->
 
-                <p:button value="#{msg.promptquestionarioenviar}" style="margin-left: 820px;margin-top: 45px">
+                <p:button value="#{msg.promptquestionarioenviar}"  style="margin-left: 820px;margin-top: 45px" >
 
                 </p:button>
 
