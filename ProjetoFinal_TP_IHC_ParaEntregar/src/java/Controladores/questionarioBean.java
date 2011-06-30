@@ -15,11 +15,11 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean (name="questionarioBean")
 @RequestScoped
-public class QuestionarioBean {
+public class questionarioBean {
     
     private Questionario questionario;
-    /** Creates a new instance of QuestionarioBean */
-    public QuestionarioBean() {
+    /** Creates a new instance of questionarioBean */
+    public questionarioBean() {
         questionario = new Questionario();
     }
     
