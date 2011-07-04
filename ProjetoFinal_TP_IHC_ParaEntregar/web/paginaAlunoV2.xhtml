@@ -62,7 +62,7 @@
                 <p:panel id="questão1" header="#{msg.promptquestionarioquestao1}" style="margin-bottom:5px;" >  
                     <h:panelGrid columns="2" cellpadding="5">
 
-                        <p:selectOneMenu  effect="drop" height="250" style="width: 300px">
+                        <p:selectOneMenu  id="cidades" effect="drop" height="250" style="width: 300px" required="true" requiredMessage="Selecione Alguma cidade" >
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao1selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="Aguas Claras" itemValue="cidade 1" />
                             <f:selectItem itemLabel="Asa norte" itemValue="cidade 2" />
@@ -100,6 +100,7 @@
                             <f:selectItem itemLabel="" itemValue="" />
                             <f:selectItem itemLabel="" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="cidades"/>
 
                     </h:panelGrid>
                 </p:panel>
@@ -112,17 +113,21 @@
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:outputLabel value="#{msg.promptquestionarioquestao2texto1}" for="escolaConc" />
 
+                        <h:panelGrid columns="1" >
                         <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message  for="escolaConc" />
                         </p:inputText>
+                         </h:panelGrid>
 
                         <h:outputLabel value="#{msg.promptquestionarioquestao2texto2}" for="escolaConcLocal" />
                         <p:inputText id="escolaConcLocal" label="escolaConcLocal" value="" size="35"
-                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
+                                     maxlength="45" required="true" requiredMessage="Por favor,o local da escola!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message  for="escolaConcLocal" />
                         </p:inputText>
                     </h:panelGrid>
 
@@ -135,17 +140,19 @@
 
                     <h:panelGrid columns="1" cellpadding="5" width="900">
                         <p:selectOneRadio >
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao3subitem1}" itemValue="sim" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao3subitem1}" itemValue="sim" itemDisabled="true" id="prevest"/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao3subitem2}" itemValue="nao" />
+                            <p:message  for="prevest" />
                         </p:selectOneRadio>
 
                         <p:separator /> 
 
-                        <h:outputLabel value="#{msg.promptquestionarioquestao3titulo2}" for="cusinho" />
+                        <h:outputLabel value="#{msg.promptquestionarioquestao3titulo2}"/>
                         <p:inputText id="cursinho" label="cursinho" value="" size="35"
-                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
+                                     maxlength="45" required="true" requiredMessage="Por favor, digite o nome do cursinho corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message for="cursinho" />
                         </p:inputText>
 
                         <p:separator /> 
@@ -185,7 +192,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem1}" itemValue="sim" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem2}" itemValue="nao" />
                         </p:selectOneRadio>  <h:outputText value="#{msg.promptquestionarioquestao5titulo2}" />
-                        <p:selectOneMenu  effect="drop" height="250">
+                        <p:selectOneMenu  effect="drop" height="250" id="beneficio" required="true" requiredMessage="Digite a cidade do beneficio">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem3}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem4}" itemValue="" />
@@ -203,6 +210,7 @@
                             <f:selectItem itemLabel="" itemValue="" />
                             <f:selectItem itemLabel="" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="beneficio" />
 
                     </h:panelGrid>
 
@@ -214,7 +222,7 @@
                 <p:panel id="questão6" header="#{msg.promptquestionarioquestao6}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="210">
+                        <p:selectOneMenu  effect="drop" height="210" id="estadocivil" required="true" requiredMessage="Selecione o estado civil">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao6selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao6subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao6subitem2}" itemValue="" />
@@ -224,6 +232,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao6subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao6subitem7}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="estadocivil" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -510,13 +519,14 @@
                 <p:panel  id="questão21" header="#{msg.promptquestionarioquestao21}" style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem1}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem2}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem3}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem4}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem5}" itemValue="" />
+                        <p:selectManyCheckbox value="#{formBean}" id="tipolivro" required="true" requiredMessage="Selecione o tipo de livro">
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem1}" itemValue="tipolivro1" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem2}" itemValue="tipolivro2" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem3}" itemValue="tipolivro3" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem4}" itemValue="tipolivro4" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao21subitem5}" itemValue="tipolivro5" />
                         </p:selectManyCheckbox>
+                        <p:message for="tipolivro" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -526,13 +536,14 @@
                 <p:panel  id="questão22" header="#{msg.promptquestionarioquestao22}" style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox value="#{formBean}" id="atualizar" required="true" requiredMessage="Selecione o meio">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao22subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao22subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao22subitem3}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao22subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao22subitem5}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="atualizar" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -787,7 +798,7 @@
 
                         <p:separator/>
 
-                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo2}" for="cusinho" />
+                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo2}" />
                         <p:inputText size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
@@ -796,7 +807,7 @@
 
                         <p:separator/>
 
-                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo3}" for="cusinho" />
+                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo3}" />
                         <p:inputText size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
@@ -805,7 +816,7 @@
 
                         <p:separator/>
 
-                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo4}" for="cusinho" />
+                        <h:outputLabel value="#{msg.promptquestionarioquestao38titulo4}" />
                         <p:inputText size="35"
                                      maxlength="45" required="" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
