@@ -173,10 +173,11 @@
                 <p:panel id="questão4" header="#{msg.promptquestionarioquestao4}" style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="1" cellpadding="5" width="900">
-                        <p:selectOneRadio>
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem1}" itemValue="sim" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem2}" itemValue="nao" />
+                        <p:selectOneRadio id="cotas" required="true" requiredMessage="Marcar campo" >
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem1}" itemValue="simcotas" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem2}" itemValue="naocotas" />
                         </p:selectOneRadio>
+                         <p:message for="cotas" />
                     </h:panelGrid>
                 </p:panel>
 

@@ -4,6 +4,8 @@
  */
 package Controladores;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -17,7 +19,7 @@ import javax.faces.context.FacesContext;
 @ManagedBean(name="loginBean")
 @RequestScoped
 public class LoginBean {
-
+    
     private static Logger log = Logger.getLogger(LoginBean.class.getName());
     
     private Login login;
@@ -36,11 +38,12 @@ public class LoginBean {
     }
     
     public String login() {
+        ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
         if (login.getLogin().equalsIgnoreCase("1045547") && login.getSenha().equals("1234")){
            log.info("Login Aluno efetuado com sucesso");
             return "SUCESSOaluno" ;
         } else {
-            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"#{msg.promptloginalunomenu7}", "#{msg.promptloginalunomenu8}"));
+            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR, myResource.getString("promptloginalunomenu7"), myResource.getString("promptloginalunomenu8")));
             log.info("Erro ao logar aluno");
             return "ERROaluno";
         } 

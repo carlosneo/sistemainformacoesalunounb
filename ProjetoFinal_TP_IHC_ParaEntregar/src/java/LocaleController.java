@@ -1,7 +1,6 @@
 
 
 import java.util.Locale;
-import java.util.ResourceBundle;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
