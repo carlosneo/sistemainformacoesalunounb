@@ -12,7 +12,6 @@ public class Questionario {
     
     
     private String questão2Item1;
-    private String questão2Item2;
 
     public String getQuestão2Item1() {
         return questão2Item1;
@@ -22,16 +21,11 @@ public class Questionario {
         this.questão2Item1 = questão2Item1;
     }
 
-    public String getQuestão2Item2() {
-        return questão2Item2;
-    }
-
-    public void setQuestão2Item2(String questão2Item2) {
-        this.questão2Item2 = questão2Item2;
-    }
-    
     
     
     
     
 }
+
+
+

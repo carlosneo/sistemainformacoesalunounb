@@ -31,7 +31,9 @@
 
         <p:tabView id="tabViewPaginaAlunoV2" effect="opacity" effectDuration="normal" style=" margin-right: 25px; " >  
 
+          
             <p:tab title="#{msg.messagepaginaalunov2menu5}">  
+                  
                 <h:panelGrid  columns="2" cellpadding="5" cellspacing="5" width="1500">
 
                     <h:panelGrid  columns="1" cellpadding="5" cellspacing="5" width="800">  
@@ -53,7 +55,7 @@
             </p:tab>  
 
             <p:tab title="#{msg.messagepaginaalunov2menu6}" >  
-
+<h:form>
 
                 <!--QUESTÃO 01-->                
 
@@ -112,7 +114,7 @@
 
                         <p:inputText id="escolaConc" label="EscolaConc" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome da escola!" 
-                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!"  >
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" >
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
 
@@ -833,11 +835,14 @@
 
                 <!--FIM- DO QUESTIONÁRIO-->
 
-                <p:button value="#{msg.promptquestionarioenviar}"  style="margin-left: 820px;margin-top: 45px" >
+                <p:commandButton value="#{msg.promptquestionarioenviar}"  style="margin-left: 820px;margin-top: 45px" ajax="false" >
 
-                </p:button>
-
-            </p:tab >           
+                </p:commandButton>
+                
+            </h:form>
+            </p:tab > 
+            
+            
         </p:tabView > 
     </h:body>
 </html>

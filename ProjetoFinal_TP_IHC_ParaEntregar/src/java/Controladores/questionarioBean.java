@@ -18,22 +18,34 @@ import javax.faces.context.FacesContext;
 public class questionarioBean {
     
     private Questionario questionario;
-    /** Creates a new instance of questionarioBean */
+
+    public Questionario getQuestionario() {
+        return questionario;
+    }
+
+    public void setQuestionario(Questionario questionario) {
+        this.questionario = questionario;
+    }
+
+  
+    
+  
     public questionarioBean() {
         questionario = new Questionario();
     }
     
- public String ValidadorQuestionario() {
-        if (questionario.getQuestão2Item1().equalsIgnoreCase("") && questionario.getQuestão2Item2().equalsIgnoreCase("")) {
-            
-            return "questao2Item1ACEITO";
-           
+    public String validadorQuestionario() {
+        if (questionario.getQuestão2Item1().equalsIgnoreCase("marista")){
+         
+            return "questao2Item1ACEITO" ;
         } else {
-            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));
-           
+       
             return "questao2Item1ERRO";
         } 
     }
     
-    
+     
+
 }
+
+
