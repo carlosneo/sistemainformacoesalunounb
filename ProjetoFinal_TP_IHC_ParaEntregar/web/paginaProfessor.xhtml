@@ -29,8 +29,8 @@
                  <p:menuitem value="#{msg.promptpaginaprofessormenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
                  
                   <p:submenu label="#{msg.promptpaginaprofessormenu3}" icon="ui-icon ui-icon-wrench">
-                    <p:menuitem value="#{msg.promptpaginaprofessormenu4}" action="#{localeController.portugueseLocale}"  update="menupaginaprofessor,panelpaginaprofessor" />
-                    <p:menuitem value="#{msg.promptpaginaprofessormenu5}" action="#{localeController.englishLocale}" update="menupaginaprofessor,panelpaginaprofessor" />
+                      <p:menuitem value="#{msg.promptpaginaprofessormenu4}" action="#{localeController.portugueseLocale}"  update="menupaginaprofessor,panelpaginaprofessor" ajax="false" />
+                    <p:menuitem value="#{msg.promptpaginaprofessormenu5}" action="#{localeController.englishLocale}" update="menupaginaprofessor,panelpaginaprofessor" ajax="false"/>
                 </p:submenu>
                  
              </p:menubar>
@@ -54,16 +54,47 @@
                 <p:graphicText value="#{msg.promptpaginaprofessormenu9}" fontName="Courier New" fontStyle="bold" fontSize="18" />
                     
                 <h:panelGrid  columns="2">
+                    
+                    <p:panel header="#{msg.Cor}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanCor.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.escolaridadeMae}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanEscolaridadeMae.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.proPai}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanEscolaridadePai.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.pEstadoCivil}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanEstadoCivil.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
 
-
+                    <p:panel header="#{msg.pMoradia}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanMoradia.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.pPrevestTMP}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanPrevVestTempo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.pQntdpessoasmoran}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanQtndPessoasMoram.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.RendaMensal}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanRendaMensal.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
+                    <p:panel header="#{msg.ptrabalho}" widgetVar="panel">  
+                        <p:pieChart id="sexo" value="#{chartBeanTrabalho.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
+                    </p:panel>
+                    
                     <p:panel header="#{msg.promptpaginaprofessormenu10}" widgetVar="panel">  
                         <p:pieChart id="sexo" value="#{chartBeanSexo.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
                                       
-                    <p:panel header="#{msg.promptpaginaprofessormenu11}" widgetVar="panel">  
-                        <p:pieChart value="#{chartBeanCidade.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px"/>
-                    </p:panel>
-                    
                     <p:panel header="#{msg.promptpaginaprofessormenu12}"  widgetVar="panel">  
                         <p:pieChart value="#{chartBeanPreVest.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="350px" style="chartStyle" />
                     </p:panel>
@@ -73,7 +104,7 @@
                     </p:panel>
                     
                     <p:panel header="#{msg.promptpaginaprofessormenu14}" widgetVar="panel" >  
-                        <p:pieChart value="#{chartBeanRA.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" style="chartStyle" />
+                        <p:pieChart value="#{chartBeanRABeneficio.sales}" var="sale" categoryField="#{sale.brand}" dataField="#{sale.amount}" width="325px" style="chartStyle" />
                     </p:panel>
 
                     <p:panel header="#{msg.promptpaginaprofessormenu15}" widgetVar="panel">  

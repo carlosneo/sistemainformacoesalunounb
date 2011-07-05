@@ -17,8 +17,8 @@
                  <p:menuitem value="#{msg.promptloginprof2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
                  
                   <p:submenu label="#{msg.promptloginprof3}" icon="ui-icon ui-icon-wrench">
-                    <p:menuitem value="#{msg.promptloginprof4}" action="#{localeController.portugueseLocale}"  update="panelloginprof,menuloginprof" />
-                    <p:menuitem value="#{msg.promptloginprof5}" action="#{localeController.englishLocale}" update="panelloginprof,menuloginprof" />
+                      <p:menuitem value="#{msg.promptloginprof4}" action="#{localeController.portugueseLocale}"  update="panelloginprof,menuloginprof" ajax="false" />
+                    <p:menuitem value="#{msg.promptloginprof5}" action="#{localeController.englishLocale}" update="panelloginprof,menuloginprof"  ajax="false"/>
                 </p:submenu>
              </p:menubar>
 

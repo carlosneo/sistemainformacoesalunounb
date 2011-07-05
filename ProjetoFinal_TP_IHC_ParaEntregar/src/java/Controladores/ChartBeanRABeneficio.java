@@ -7,16 +7,16 @@ package Controladores;
 
 import java.util.*;
 import javax.faces.bean.ManagedBean;
-@ManagedBean (name="chartBeanRA")
+@ManagedBean (name="chartBeanRABeneficio")
 /**
  *
  * @author Neo
  */
-public class ChartBeanRA {
+public class ChartBeanRABeneficio {
 
 	private List<Sale> sales;
 
-	public ChartBeanRA() {
+	public ChartBeanRABeneficio() {
 		sales = new ArrayList<Sale>();
 		sales.add(new Sale("Sim", 40));
 		sales.add(new Sale("Não", 200));

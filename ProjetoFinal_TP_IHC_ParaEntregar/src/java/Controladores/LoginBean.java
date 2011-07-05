@@ -50,11 +50,12 @@ public class LoginBean {
     }
     
        public String loginProf() {
+        ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
         if (login.getLogin().equalsIgnoreCase("1234") && login.getSenha().equals("1234")){
             log.info("Login Aluno efetuado com sucesso");
             return "SUCESSOprof" ;
         } else {
-            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR,"O número da matricula ou a senha estão incorretos. Tente novamente.", "Login invalido!"));
+            FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(FacesMessage.SEVERITY_ERROR, myResource.getString("promptloginprof10"), myResource.getString("promptloginprof11")));
             log.info("Erro ao logar professor");
             return "ERROprof";
         } 
