@@ -5,8 +5,13 @@
 package Controladores;
 
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanQtndPessoasMoram")
 
 /**
@@ -18,12 +23,12 @@ public class ChartBeanQtndPessoasMoram  {
 	private List<Sale> sales;
 
 	public ChartBeanQtndPessoasMoram() {
+                ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
-                sales.add(new Sale("Nenuma", 540));
-		sales.add(new Sale("1 ou 2", 540));
-		sales.add(new Sale("3 ou 4", 325));
-                sales.add(new Sale("5 ou 6", 100));
-                sales.add(new Sale("6 ou Mais", 17));
+		sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto1"), 40));
+		sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto2"), 25));
+                sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto3"), 50));
+                sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto4"), 38));
 		
 	}
 

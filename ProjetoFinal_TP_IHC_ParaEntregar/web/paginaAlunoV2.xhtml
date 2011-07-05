@@ -15,9 +15,23 @@
         <p:menubar id="menuPaginaAlunoV2" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
             <p:menuitem value="#{msg.messagepaginaalunov2menu1}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
         <p:submenu label="#{msg.messagepaginaalunov2menu2}" icon="ui-icon ui-icon-wrench">
-            <p:menuitem value="#{msg.messagepaginaalunov2menu3}" action="#{localeController.portugueseLocale}" update="menuPaginaAlunoV2,tabViewPaginaAlunoV2"/>
-                    <p:menuitem value="#{msg.messagepaginaalunov2menu4}" action="#{localeController.englishLocale}" update="menuPaginaAlunoV2,tabViewPaginaAlunoV2"/>
+            
+            
+            <p:menuitem update="menuPaginaAlunoV2,tabViewPaginaAlunoV2" ajax="false" >
+               <h:commandLink value="#{msg.messagepaginaalunov2menu3}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+            
+            <p:menuitem update="menuPaginaAlunoV2,tabViewPaginaAlunoV2" ajax="false" >
+            <h:commandLink value="#{msg.messagepaginaalunov2menu4}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+            
+            
         </p:submenu>
+            
         
         </p:menubar>
 
@@ -173,11 +187,11 @@
                 <p:panel id="questão4" header="#{msg.promptquestionarioquestao4}" style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="1" cellpadding="5" width="900">
-                        <p:selectOneRadio id="cotas" required="true" requiredMessage="Marcar campo" >
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem1}" itemValue="simcotas" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem2}" itemValue="naocotas" />
+                        <p:selectOneRadio id="cotasvest" required="true" requiredMessage="Marcar campo" >
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem1}" itemValue="" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao4subitem2}" itemValue="" />
                         </p:selectOneRadio>
-                         <p:message for="cotas" />
+                       <p:message for="cotasvest" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -193,7 +207,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem1}" itemValue="sim" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem2}" itemValue="nao" />
                         </p:selectOneRadio>  <h:outputText value="#{msg.promptquestionarioquestao5titulo2}" />
-                        <p:selectOneMenu  effect="drop" height="250" id="beneficio" required="true" requiredMessage="Digite a cidade do beneficio">
+                        <p:selectOneMenu  effect="drop" height="250" id="beneficio" required="true" requiredMessage="Selecione a cidade do beneficio">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem3}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao5subitem4}" itemValue="" />
@@ -270,7 +284,7 @@
                 <p:panel id="questão9" header="#{msg.promptquestionarioquestao9}" style="margin-bottom:5px;">              
                     <h:panelGrid columns="2" cellpadding="5">
 
-                        <p:selectOneMenu  effect="drop" height="210">
+                        <p:selectOneMenu id="cor" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="210">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao9selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao9subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao9subitem2}" itemValue="" />
@@ -280,6 +294,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao9subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao9subitem7}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="cor" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -287,7 +302,7 @@
                 <p:panel id="questão10" header="#{msg.promptquestionarioquestao10}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="210" style="width: 200px">
+                        <p:selectOneMenu id="moradiaatual" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="210" style="width: 200px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao10selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao10subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao10subitem2}" itemValue="" />
@@ -297,6 +312,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao10subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao10subitem7}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="moradiaatual" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -305,13 +321,15 @@
                 <p:panel  id="questão11" header="#{msg.promptquestionarioquestao11})" style="margin-bottom:5px;">              
                     <h:panelGrid columns="2" cellpadding="5">
 
-                        <p:selectOneMenu  effect="drop" height="140" style="width: 280px">
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem1}" itemValue=""/>
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem2}" itemValue="Option 3" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem3}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem4}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem5}" itemValue="" />
+                        <p:selectOneMenu id="rendamensal" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="140" style="width: 280px">
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11selecionar}" itemValue=""/>
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem1}" itemValue="1"/>
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem2}" itemValue="2" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem3}" itemValue="3" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem4}" itemValue="4" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao11subitem5}" itemValue="5" />
                         </p:selectOneMenu>
+                        <p:message for="rendamensal" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -321,14 +339,15 @@
                 <p:panel  id="questão12" header="#{msg.promptquestionarioquestao12}" style="margin-bottom:5px;">              
                     <h:panelGrid columns="2" cellpadding="5">
 
-                        <p:selectOneMenu  effect="drop" height="160">
+                        <p:selectOneMenu id="qntsmoram" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="160">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao12selecionar}" itemValue=""/>
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem1}" itemValue="Option 3" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem2}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem3}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem4}" itemValue="" />
-                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem5}" itemValue="" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem1}" itemValue="2" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem2}" itemValue="3" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem3}" itemValue="4" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem4}" itemValue="5" />
+                            <f:selectItem itemLabel="#{msg.promptquestionarioquestao12subitem5}" itemValue="6" />
                         </p:selectOneMenu>
+                        <p:message for="qntsmoram" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -338,7 +357,7 @@
                 <p:panel  id="questão13" header="#{msg.promptquestionarioquestao13}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                        <p:selectOneMenu id="trabalho" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="160" style="width: 380px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao13selecionar }" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao13subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao13subitem2}" itemValue="" />
@@ -346,6 +365,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao13subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao13subitem5}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="trabalho" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -355,7 +375,7 @@
                 <p:panel  id="questão14" header="#{msg.promptquestionarioquestao14}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="160" style="width: 380px">
+                        <p:selectOneMenu id="cargaHoraria" required="true" requiredMessage="Selecione uma opcao"  effect="drop" height="160" style="width: 380px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao14selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao14subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao14subitem2}" itemValue="" />
@@ -363,6 +383,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao14subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao14subitem5}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="cargaHoraria" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -372,7 +393,7 @@
                 <p:panel  id="questão15" header="#{msg.promptquestionarioquestao15}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="160" style="width: 340px">
+                        <p:selectOneMenu id="escolaridadepai" required="true" requiredMessage="Selecione uma opcao"  effect="drop" height="160" style="width: 340px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao15selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao15subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao15subitem2}" itemValue="" />
@@ -384,6 +405,7 @@
                             <f:selectItem itemLabel="" itemValue="" />
                             <f:selectItem itemLabel="" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="escolaridadepai" />
 
                     </h:panelGrid>
                 </p:panel>
@@ -393,7 +415,7 @@
                 <p:panel  id="questão16" header="#{msg.promptquestionarioquestao16}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="200" style="width: 340px">
+                        <p:selectOneMenu id="escolaridademae" required="true" requiredMessage="Selecione uma opcao"   effect="drop" height="200" style="width: 340px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao16selecionar}"  itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao16subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao16subitem2}" itemValue="" />
@@ -403,6 +425,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao16subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao16subitem7}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="escolaridademae" />
 
                     </h:panelGrid>
                 </p:panel>
@@ -412,14 +435,16 @@
                 <p:panel  id="questão17" header="#{msg.promptquestionarioquestao17}" style="margin-bottom:5px;">              
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                        <p:selectOneMenu id="cursouensinomedio" required="true" requiredMessage="Selecione uma opcao" effect="drop" height="120" style="width: 340px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17subitem3}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao17subitem5}" itemValue="" />
-                        </p:selectOneMenu>
+                             </p:selectOneMenu>
+                            <p:message for="cursouensinomedio" />
+                         
                     </h:panelGrid>
                 </p:panel>
 
@@ -428,7 +453,7 @@
                 <p:panel  id="questão18" header="#{msg.promptquestionarioquestao18}" style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                        <p:selectOneMenu id="tipoensinomedio" required="true" requiredMessage="Selecione uma opcao"   effect="drop" height="120" style="width: 340px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao18selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao18subitem1}" itemValue="Option 3" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao18subitem2}" itemValue="" />
@@ -437,6 +462,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao18subitem5}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao18subitem6}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="tipoensinomedio" /> 
                     </h:panelGrid>
                 </p:panel>
 
@@ -503,7 +529,7 @@
 
                     <h:panelGrid columns="2" cellpadding="5">
                         <h:outputText value="" />
-                        <p:selectOneMenu  effect="drop" height="120" style="width: 340px">
+                        <p:selectOneMenu id="medialivros" required="true" requiredMessage="Selecione uma opcao"   effect="drop" height="120" style="width: 340px">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao20selecionar}" itemValue=""/>
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao20subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao20subitem2}" itemValue="" />
@@ -511,6 +537,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao20subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao20subitem5}" itemValue="" />
                         </p:selectOneMenu>
+                        <p:message for="medialivros" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -567,13 +594,14 @@
                 <p:panel  id="questão24" header="#{msg.promptquestionarioquestao24}"  style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox id="assuntojornal" required="true" requiredMessage="Selecione uma opcao"  value="#{formBean}">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao24subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao24subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao24subitem3}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao24subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao24subitem5}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="assuntojornal" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -597,7 +625,7 @@
                 <p:panel  id="questão26" header="#{msg.promptquestionarioquestao26}"  style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox id="atividadeartistica" required="true" requiredMessage="Selecione uma opcao"  value="#{formBean}">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao26subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao26subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao26subitem3}" itemValue="" />
@@ -606,6 +634,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao26subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao26subitem7}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="atividadeartistica" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -652,13 +681,14 @@
                 <p:panel  id="questão30" header="#{msg.promptquestionarioquestao30}"  style="margin-bottom:5px;">     
 
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox id="naoacessainternet" required="true" requiredMessage="Selecione uma opcao"  value="#{formBean}">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao30subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao30subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao30subitem3}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao30subitem4}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao30subitem5}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="naoacessainternet" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -681,7 +711,7 @@
 
                 <p:panel  id="questão32" header="#{msg.promptquestionarioquestao32}"  style="margin-bottom:5px;">     
                     <h:panelGrid columns="2" cellpadding="5">
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox id="computadorpara" required="true" requiredMessage="Selecione uma opcao"  value="#{formBean}">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao32subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao32subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao32subitem3}" itemValue="" />
@@ -690,6 +720,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao32subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao32subitem7}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="computadorpara" />
 
                     </h:panelGrid>
                 </p:panel>
@@ -714,7 +745,7 @@
                 <p:panel  id="questão34" header="#{msg.promptquestionarioquestao34}"  style="margin-bottom:5px;">     
                     <h:panelGrid columns="2" cellpadding="5">
 
-                        <p:selectManyCheckbox value="#{formBean}">
+                        <p:selectManyCheckbox id="meiotransporte" required="true" requiredMessage="Selecione uma opcao"  value="#{formBean}">
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao34subitem1}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao34subitem2}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao34subitem3}" itemValue="" />
@@ -723,6 +754,7 @@
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao34subitem6}" itemValue="" />
                             <f:selectItem itemLabel="#{msg.promptquestionarioquestao34subitem7}" itemValue="" />
                         </p:selectManyCheckbox>
+                        <p:message for="meiotransporte" />
 
                     </h:panelGrid>
                 </p:panel>
@@ -745,6 +777,7 @@
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
                         </p:inputText>
+                        <p:message for="qntAjuda" />
                     </h:panelGrid>
                 </p:panel>
 
@@ -800,28 +833,31 @@
                         <p:separator/>
 
                         <h:outputLabel value="#{msg.promptquestionarioquestao38titulo2}" />
-                        <p:inputText size="35"
+                        <p:inputText id="afirmativo" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message for="afirmativo" />
                         </p:inputText>
 
                         <p:separator/>
 
                         <h:outputLabel value="#{msg.promptquestionarioquestao38titulo3}" />
-                        <p:inputText size="35"
+                        <p:inputText id="instituicao" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message for="instituicao" />
                         </p:inputText>
 
                         <p:separator/>
 
                         <h:outputLabel value="#{msg.promptquestionarioquestao38titulo4}" />
-                        <p:inputText size="35"
+                        <p:inputText id="anoconc" size="35"
                                      maxlength="45" required="" requiredMessage="Por favor, digite o nome corretamente!" 
                                      validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
                             <f:validateLength minimum="3" maximum="45" />
+                            <p:message for="anoconc" />
                         </p:inputText>
                     </h:panelGrid>
                 </p:panel>                    

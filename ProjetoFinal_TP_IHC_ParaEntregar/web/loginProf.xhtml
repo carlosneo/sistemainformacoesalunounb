@@ -17,8 +17,21 @@
                  <p:menuitem value="#{msg.promptloginprof2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
                  
                   <p:submenu label="#{msg.promptloginprof3}" icon="ui-icon ui-icon-wrench">
-                      <p:menuitem value="#{msg.promptloginprof4}" action="#{localeController.portugueseLocale}"  update="panelloginprof,menuloginprof" ajax="false" />
-                    <p:menuitem value="#{msg.promptloginprof5}" action="#{localeController.englishLocale}" update="panelloginprof,menuloginprof"  ajax="false"/>
+                      
+                      
+                      <p:menuitem update="panelloginprof,menuloginprof" ajax="false" >
+                      <h:commandLink value="#{msg.promptloginprof4}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                      
+                      
+                    <p:menuitem update="panelloginprof,menuloginprof"  ajax="false">
+                    <h:commandLink value="#{msg.promptloginprof5}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
                 </p:submenu>
              </p:menubar>
 

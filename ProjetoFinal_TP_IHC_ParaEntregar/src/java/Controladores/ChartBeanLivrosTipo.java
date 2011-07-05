@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanLivrosTipo")
 
 /**
@@ -17,12 +22,13 @@ public class ChartBeanLivrosTipo {
     private List<Sale> sales;
 
 	public ChartBeanLivrosTipo() {
+                ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Obras Literarias(Ficção)", 320));
-		sales.add(new Sale("Obras de não ficção", 75));
-                sales.add(new Sale("livros Tecnicos", 320));
-		sales.add(new Sale("Livros de auto-Ajuda", 75));
-                sales.add(new Sale("Outros", 75));
+		sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto1"), 320));
+		sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto2"), 75));
+                sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto3"), 320));
+		sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto4"), 75));
+                sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto5"), 75));
 		
 	}
 

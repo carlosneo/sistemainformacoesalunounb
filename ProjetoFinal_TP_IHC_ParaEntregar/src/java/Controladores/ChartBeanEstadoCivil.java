@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanEstadoCivil")
 
 /**
@@ -17,14 +22,15 @@ public class ChartBeanEstadoCivil {
     private List<Sale> sales;
 
 	public ChartBeanEstadoCivil() {
+                ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Com os pais", 40));
-		sales.add(new Sale("Com os familiares", 25));
-                sales.add(new Sale("Com esposa/filho", 50));
-                sales.add(new Sale("Amigos", 38));
-                sales.add(new Sale("Alojamento Universitario", 17));
-                sales.add(new Sale("Sozinho", 38));
-                sales.add(new Sale("Outro", 17));
+		sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto1"), 40));
+		sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto2"), 25));
+                sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto3"), 50));
+                sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto4"), 38));
+                sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto5"), 17));
+                sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto6"), 38));
+                sales.add(new Sale(myResource.getString("promptchartbeanestadociviltexto7"), 17));
 		
 	}
 

@@ -19,9 +19,22 @@
                  <p:menuitem value="#{msg.promptcadastromenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
                  
                  <p:submenu label="#{msg.promptcadastromenu3}" icon="ui-icon ui-icon-wrench">
-                    <p:menuitem value="#{msg.promptcadastromenu4}" action="#{localeController.portugueseLocale}"  update="menubarCadastro,panelgridCadastro" />
-                    <p:menuitem value="#{msg.promptcadastromenu5}" action="#{localeController.englishLocale}" update="menubarCadastro,panelgridCadastro" />
+                     
+                    <p:menuitem update="menubarCadastro,panelgridCadastro" ajax="false">
+                     <h:commandLink value="#{msg.promptcadastromenu4}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
+                    <p:menuitem update="menubarCadastro,panelgridCadastro" ajax="false">
+                    <h:commandLink value="#{msg.promptcadastromenu5}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
                 </p:submenu>
+                 
              </p:menubar>
 
          </h:form>

@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanRendaMensal")
 
 /**
@@ -17,12 +22,12 @@ public class ChartBeanRendaMensal {
     private List<Sale> sales;
 
 	public ChartBeanRendaMensal() {
+		ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("ate 3", 40));
-		sales.add(new Sale("3 ate 10", 25));
-                sales.add(new Sale("10 a 20", 50));
-                sales.add(new Sale("20 a 30", 38));
-                sales.add(new Sale("Mais de 30", 17));
+		sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto1"), 40));
+		sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto2"), 25));
+                sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto3"), 50));
+                sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto4"), 38));
 		
 	}
 

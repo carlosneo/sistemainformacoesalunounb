@@ -17,8 +17,22 @@
              <p:menubar id="menubarloginaluno" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
                  <p:menuitem value="#{msg.promptloginalunomenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
                  <p:submenu label="#{msg.promptloginalunomenu9}" icon="ui-icon ui-icon-wrench">
-                     <p:menuitem value="#{msg.promptloginalunomenu10}" action="#{localeController.portugueseLocale}"  update="panelloginaluno,menubarloginaluno" ajax="false" />
-                    <p:menuitem value="#{msg.promptloginalunomenu11}" action="#{localeController.englishLocale}" update="panelloginaluno,menubarloginaluno" ajax="false" />
+                     
+                     
+                     <p:menuitem update="panelloginaluno,menubarloginaluno" ajax="false" >
+                     <h:commandLink value="#{msg.promptloginalunomenu10}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                     
+                     
+                    <p:menuitem update="panelloginaluno,menubarloginaluno" ajax="false" >
+                    <h:commandLink value="#{msg.promptloginalunomenu11}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
                 </p:submenu>
                  
              </p:menubar>

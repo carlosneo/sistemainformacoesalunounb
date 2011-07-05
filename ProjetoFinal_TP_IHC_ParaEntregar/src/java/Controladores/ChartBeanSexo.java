@@ -27,8 +27,8 @@ public class ChartBeanSexo  {
             ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
                 log.info("Grafico relativo ao sexo dos alunos gerado com sucesso");
-		sales.add(new Sale(myResource.getString("prompt.texto1"), 540));
-		sales.add(new Sale(myResource.getString("prompt.texto2"), 325));
+		sales.add(new Sale(myResource.getString("promptchartsexotexto1"), 540));
+		sales.add(new Sale(myResource.getString("promptchartsexotexto2"), 325));
 		
 	}
 

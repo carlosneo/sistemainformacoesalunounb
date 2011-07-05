@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanAtualizado")
 
 /**
@@ -14,15 +19,18 @@ import javax.faces.bean.ManagedBean;
  */
 public class ChartBeanAtualizado {
     
+    private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
+    
     private List<Sale> sales;
 
 	public ChartBeanAtualizado() {
+                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
-		sales.add(new Sale("Jornais", 20));
-		sales.add(new Sale("Revistas", 100));
-                sales.add(new Sale("TV", 420));
-		sales.add(new Sale("Rádio", 200));
-		sales.add(new Sale("Internet", 500));
+		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto1"), 20));
+		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto2"), 100));
+                sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto3"), 420));
+		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto4"), 200));
+		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto5"), 500));
 		
 	}
 

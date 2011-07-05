@@ -27,8 +27,18 @@
                 <p:menuitem value="#{msg.promptindexmenu5}" icon="ui-icon ui-icon-pencil" url="cadastro.xhtml"/>
                 
                 <p:submenu label="#{msg.promptindexmenu6}" icon="ui-icon ui-icon-wrench">
-                    <p:menuitem value="#{msg.promptindexmenu7}" action="#{localeController.portugueseLocale}"  update="menuIndex,panelgridIndex"  icon="pt_BR"/>
-                    <p:menuitem value="#{msg.promptindexmenu8}" action="#{localeController.englishLocale}" update="menuIndex,panelgridIndex" />
+                    <p:menuitem update="menuIndex,panelgridIndex">
+                        <h:commandLink value="#{msg.promptindexmenu7}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+         
+                    <p:menuitem update="menuIndex,panelgridIndex" >
+                    <h:commandLink value="#{msg.promptindexmenu8}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
                 </p:submenu>
                 
                 <p:menuitem value="#{msg.promptindexmenu9}" icon="ui-icon ui-icon-help" url="contato.xhtml"/>
