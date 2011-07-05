@@ -19,12 +19,15 @@ import javax.faces.context.FacesContext;
  * @author Guilherme
  */
 public class ChartBeanCotas  {
+    
+     private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
 
 	private List<Sale> sales;
 
 	public ChartBeanCotas() {
                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a cotas criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeancotastexto1"), 220));
 		sales.add(new Sale(myResource.getString("promptchartbeancotastexto2"), 577));
 		

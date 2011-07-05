@@ -18,12 +18,15 @@ import javax.faces.context.FacesContext;
  * @author Neo
  */
 public class ChartBeanLivrosTipo {
+    
+    private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
  
     private List<Sale> sales;
 
 	public ChartBeanLivrosTipo() {
                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo ao tipo de livros criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto1"), 320));
 		sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto2"), 75));
                 sales.add(new Sale(myResource.getString("promptchartbeanlivrostipotexto3"), 320));

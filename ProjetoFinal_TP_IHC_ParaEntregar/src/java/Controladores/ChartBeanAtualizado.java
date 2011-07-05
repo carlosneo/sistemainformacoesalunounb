@@ -26,6 +26,7 @@ public class ChartBeanAtualizado {
 	public ChartBeanAtualizado() {
                  ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo ao meio de atualizacao criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto1"), 20));
 		sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto2"), 100));
                 sales.add(new Sale(myResource.getString("promptchartbeanatualizadotexto3"), 420));

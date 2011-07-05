@@ -19,11 +19,14 @@ import javax.faces.context.FacesContext;
  */
 public class ChartBeanRendaMensal {
     
+    private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
+    
     private List<Sale> sales;
 
 	public ChartBeanRendaMensal() {
 		ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo renda mensal criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto1"), 40));
 		sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto2"), 25));
                 sales.add(new Sale(myResource.getString("promptchartbeanrendamensaltexto3"), 50));

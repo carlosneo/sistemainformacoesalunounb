@@ -19,12 +19,15 @@ import javax.faces.context.FacesContext;
  * @author Guilherme
  */
 public class ChartBeanPreVest  {
+    
+        private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
 
 	private List<Sale> sales;
 
 	public ChartBeanPreVest() {
                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a informacoes do pre-vestibular criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanprevesttexto1"), 320));
 		sales.add(new Sale(myResource.getString("promptchartbeanprevesttexto2"), 75));
 		

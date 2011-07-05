@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanFreqJornal")
 
 /**
@@ -13,11 +18,14 @@ import javax.faces.bean.ManagedBean;
  * @author Neo
  */
 public class ChartBeanFreqJornal {
+    
+        private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
 
 	private List<Sale> sales;
 
 	public ChartBeanFreqJornal() {
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a frequencia de leitura criado com sucesso");
 		sales.add(new Sale("Diariamente", 6));
 		sales.add(new Sale("Algumas vezes por semana", 50));
                 sales.add(new Sale("Somente Domingos", 100));

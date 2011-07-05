@@ -17,12 +17,15 @@ import javax.faces.context.FacesContext;
  * @author Neo
  */
 public class ChartBeanRABeneficio {
+    
+        private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
 
 	private List<Sale> sales;
 
 	public ChartBeanRABeneficio() {
                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo ao beneficio por RA criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanrabeneficiotexto1"), 40));
 		sales.add(new Sale(myResource.getString("promptchartbeanrabeneficiotexto1"), 200));
 		

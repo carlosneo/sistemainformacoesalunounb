@@ -772,11 +772,9 @@
                         <p:separator/>
 
                         <h:outputLabel value="#{msg.promptquestionarioquestao35titulo2}" for="cusinho" />
-                        <p:inputText id="qntAjuda" label="qntAjuda" value="" size="35"
+                        <p:inputMask mask="R$ 999999" id="qntAjuda" label="qntAjuda" value="" size="35"
                                      maxlength="45" required="true" requiredMessage="Por favor, digite a quantidade!" 
-                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!">
-                            <f:validateLength minimum="3" maximum="45" />
-                        </p:inputText>
+                                     validatorMessage="O nome deve conter entre 3 e 45 caracteres!!" />
                         <p:message for="qntAjuda" />
                     </h:panelGrid>
                 </p:panel>

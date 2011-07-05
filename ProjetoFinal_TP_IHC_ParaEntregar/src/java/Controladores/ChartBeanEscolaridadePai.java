@@ -19,11 +19,14 @@ import javax.faces.context.FacesContext;
  */
 public class ChartBeanEscolaridadePai {
     
+    private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
+    
     private List<Sale> sales;
 
 	public ChartBeanEscolaridadePai() {
 		ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a escolaridade da mae criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanescolaridadepaitexto1"), 40));
 		sales.add(new Sale(myResource.getString("promptchartbeanescolaridadepaitexto2"), 25));
                 sales.add(new Sale(myResource.getString("promptchartbeanescolaridadepaitexto3"), 50));

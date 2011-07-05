@@ -19,12 +19,15 @@ import javax.faces.context.FacesContext;
  * @author Guilherme
  */
 public class ChartBeanQtndPessoasMoram  {
+    
+        private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
 
 	private List<Sale> sales;
 
 	public ChartBeanQtndPessoasMoram() {
                 ResourceBundle myResource = ResourceBundle.getBundle("idiomas.idioma", FacesContext.getCurrentInstance().getViewRoot().getLocale());
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a qntd de pessoas que moram com vc criado com sucesso");
 		sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto1"), 40));
 		sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto2"), 25));
                 sales.add(new Sale(myResource.getString("promptchartbeanqtndpessoasmoramtexto3"), 50));

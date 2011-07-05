@@ -4,8 +4,13 @@
  */
 package Controladores;
 
+import java.util.logging.Logger;
 import java.util.*;
 import javax.faces.bean.ManagedBean;
+import java.util.ResourceBundle;
+import java.util.Locale;
+import java.text.MessageFormat;
+import javax.faces.context.FacesContext;
 @ManagedBean (name="chartBeanFilhos")
 
 /**
@@ -14,10 +19,13 @@ import javax.faces.bean.ManagedBean;
  */
 public class ChartBeanFilhos {
     
+    private static Logger log = Logger.getLogger(ChartBeanSexo.class.getName());
+    
     private List<Sale> sales;
 
 	public ChartBeanFilhos() {
 		sales = new ArrayList<Sale>();
+                log.info("Grafico relativo a quantidade de filhos criado com sucesso");
 		sales.add(new Sale("Nenhum", 40));
 		sales.add(new Sale("1", 25));
                 sales.add(new Sale("2", 50));
