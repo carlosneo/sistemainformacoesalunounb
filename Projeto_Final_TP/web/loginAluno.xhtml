@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{msg.promptloginalunomenu1}</title>
+     </h:head>
+    
+     <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+         
+         <f:view locale ="#{localeController.currentLocale}" />
+
+         <h:form>
+
+             <p:menubar id="menubarloginaluno" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="#{msg.promptloginalunomenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                 <p:submenu label="#{msg.promptloginalunomenu9}" icon="ui-icon ui-icon-wrench">
+                     
+                     
+                     <p:menuitem update="panelloginaluno,menubarloginaluno" ajax="false" >
+                     <h:commandLink value="#{msg.promptloginalunomenu10}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                     
+                     
+                    <p:menuitem update="panelloginaluno,menubarloginaluno" ajax="false" >
+                    <h:commandLink value="#{msg.promptloginalunomenu11}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
+                </p:submenu>
+                 
+             </p:menubar>
+
+         </h:form>
+
+
+    <h:form>
+        <p:panel header="#{msg.promptloginalunomenu3}" style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
+            <h:panelGrid id="panelloginaluno" columns="3"  cellspacing="25px">   
+                    <h:outputLabel value="#{msg.promptloginalunomenu4}" for="login"/>  
+                    <p:keyboard title ="#{msg.promptloginalunomenu4subitem1}" id="login" value="#{loginBean.login.login}" required="true" requiredMessage="#{msg.promptloginalunomenu4subitem2}" keypadOnly="true"/>
+                    <p:message for="login"/>
+                    <h:outputLabel value="#{msg.promptloginalunomenu5}" for="senha"/>  
+                    <p:password title ="#{msg.promptloginalunomenu5subitem1}" id="senha" feedback=""  minLength="5" value="#{loginBean.login.senha}" required="true" requiredMessage="#{msg.promptloginalunomenu5subitem2}"/>  
+                    <p:message for="senha"/>
+                    <p:commandButton  value="#{msg.promptloginalunomenu6}" action="#{loginBean.login}" ajax="false" />
+                   </h:panelGrid> 
+            <p:messages />  
+            </p:panel>  
+
+        </h:form>
+
+    </h:body> 
+
+</html>
+

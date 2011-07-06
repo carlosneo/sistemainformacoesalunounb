@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>#{msg.promptindexmenu1}!</title>
+     </h:head>
+    <!-- <p:themeSwitcher initialText="Mudar thema: " buttonPreText="Tema: "/> -->
+    
+     
+    
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+
+        <f:view locale ="#{localeController.currentLocale}" />
+        
+        <h:form>    
+                       
+              <p:menubar id="menuIndex" style=" margin-top: 122px;margin-left: -2px" >
+                              
+                <p:submenu label="#{msg.promptindexmenu2}" icon="ui-icon ui-icon-person">           
+                    <p:menuitem value="#{msg.promptindexmenu3}" url="loginAluno.xhtml" icon="ui-icon ui-icon-contact" />
+                    <p:menuitem value="#{msg.promptindexmenu4}" url="loginProf.xhtml" icon="ui-icon ui-icon-contact" />
+                </p:submenu>
+                
+                <p:menuitem value="#{msg.promptindexmenu5}" icon="ui-icon ui-icon-pencil" url="cadastro.xhtml"/>
+                
+                <p:submenu label="#{msg.promptindexmenu6}" icon="ui-icon ui-icon-wrench">
+                    <p:menuitem update="menuIndex,panelgridIndex">
+                        <h:commandLink value="#{msg.promptindexmenu7}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg"  height="15px" width="15x"  />
+                            </h:commandLink>
+                        </p:menuitem>
+         
+                    <p:menuitem update="menuIndex,panelgridIndex" >
+                    <h:commandLink value="#{msg.promptindexmenu8}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="15px" width="15px"   />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                </p:submenu>
+                
+                <p:menuitem value="#{msg.promptindexmenu9}" icon="ui-icon ui-icon-help" url="contato.xhtml"/>
+                
+                </p:menubar>
+            
+            
+            
+            
+            
+            <h:panelGrid id="panelgridIndex"  columns="1" cellpadding="5" cellspacing="5" width="800">  
+
+                   <h:outputText value="#{msg.promptindexmenu10}"/>
+                   <h:outputText style="margin-left: 35px"  value="#{msg.messageindextexto1}" />  
+             </h:panelGrid>
+         
+        </h:form>
+        
+       
+         
+   </h:body>
+    <footer>
+        <p:menubar />
+    </footer>
+</html>

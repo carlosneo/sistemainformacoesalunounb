@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>#{msg.promptcadastromenu1}</title>
+     </h:head>
+    
+       
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+        
+        <f:view locale ="#{localeController.currentLocale}" />
+    
+       <h:form>
+
+             <p:menubar id="menubarCadastro" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                 <p:menuitem value="#{msg.promptcadastromenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                 
+                 <p:submenu label="#{msg.promptcadastromenu3}" icon="ui-icon ui-icon-wrench">
+                     
+                    <p:menuitem update="menubarCadastro,panelgridCadastro" ajax="false">
+                     <h:commandLink value="#{msg.promptcadastromenu4}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
+                    <p:menuitem update="menubarCadastro,panelgridCadastro" ajax="false">
+                    <h:commandLink value="#{msg.promptcadastromenu5}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="16px" width="16px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                </p:submenu>
+                 
+             </p:menubar>
+
+         </h:form>
+        
+        <h:form>
+            <p:panel header="#{msg.promptcadastromenu6}" style="margin-right: 400px; margin-left: 400px; margin-top: 98px"  >  
+                <h:panelGrid id="panelgridCadastro" columns="3"  cellspacing="25px">   
+                    
+                    <h:outputText  value="#{msg.promptcadastromenu7}" />   
+                    <p:keyboard  id="nomecadastro" value="#{cadastroBean.cadastro.nome}" required="true" requiredMessage="campo invalido"/> 
+                    <p:message for="nomecadastro"/>
+                    
+                    <h:outputText  value="#{msg.promptcadastromenu8}" />  
+                    <p:keyboard id="matriculacadastro" keypadOnly="true" value="#{cadastroBean.cadastro.matricula}" required="true" requiredMessage="campo invalido"/> 
+                    <p:message for="matriculacadastro"/>
+                    
+                    <h:outputText value="#{msg.promptcadastromenu9}" />  
+                    <p:password id="senhacadastro" feedback="true"  minLength="5" value="#{cadastroBean.cadastro.senha}" required="true" requiredMessage="campo invalido" />
+                    <p:message for="senhacadastro"/>
+                    
+                    <p:commandButton value="#{msg.promptcadastromenu10}" action="#{cadastroBean.salvar}" ajax="false"/>
+
+
+                </h:panelGrid>  
+            </p:panel>  
+        </h:form>
+    
+    </h:body>
+    
+     <footer>
+         <p:menubar style="margin-top: 100px" />
+    </footer>
+</html>
+

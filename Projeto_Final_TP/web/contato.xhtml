@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>#{msg.promptcontatomenu1}</title>
+     </h:head>
+
+    <h:body style="font-size: 12px;background:url(Images/imagem.jpg) no-repeat">
+        
+        <f:view locale ="#{localeController.currentLocale}" />
+
+        <h:form>
+
+            <p:menubar id="menuContato" style=" margin-top: 122px;margin-left: -2px ; margin-right: 22px" >
+                <p:menuitem value="#{msg.promptcontatomenu2}" url="index.xhtml" icon="ui-icon ui-icon-home" />  
+                
+                <p:submenu label="#{msg.promptcontatomenu3}" icon="ui-icon ui-icon-wrench">
+                    
+                    
+                    <p:menuitem update="panelgridContato,menuContato,fieldset" ajax="false">
+                    <h:commandLink value="#{msg.promptcontatomenu4}" action="#{localeController.portugueseLocale}" >
+                            <h:graphicImage value="Images/flag_br.jpg" height="15px" width="15px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
+                    <p:menuitem update="panelgridContato,menuContato,fieldset" ajax="false">
+                    <h:commandLink value="#{msg.promptcontatomenu5}" action="#{localeController.englishLocale}" >
+                            <h:graphicImage value="Images/US.jpg" height="15px" width="15px" />
+                            </h:commandLink>
+                        </p:menuitem>
+                    
+                    
+                </p:submenu>
+            </p:menubar>
+
+        </h:form>
+
+        <p:fieldset id="fieldset" style="margin-right: 800px" legend="#{msg.promptcontatomenu6}">  
+            <h:panelGrid id="panelgridContato"  >  
+               
+<ul>
+<h3>#{msg.promptcontatotexto1}</h3>
+<li>#{msg.promptcontatotexto2}</li>
+
+<h3>#{msg.promptcontatotexto3}</h3>
+<li>#{msg.promptcontatotexto4}</li>
+<li>#{msg.promptcontatotexto5}</li> 
+<li>#{msg.promptcontatotexto6}</li> 
+<li>#{msg.promptcontatotexto7}</li>
+
+<h3>#{msg.promptcontatotexto8}</h3>
+<li>#{msg.promptcontatotexto9}</li> 
+<li>#{msg.promptcontatotexto10}</li> 
+<li>#{msg.promptcontatotexto11}</li>
+
+
+
+
+</ul>
+                
+                
+                
+            </h:panelGrid>  
+        </p:fieldset>
+
+
+
+
+
+    </h:body>
+</html>
+
