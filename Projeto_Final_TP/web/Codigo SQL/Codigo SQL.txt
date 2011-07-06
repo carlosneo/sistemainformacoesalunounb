@@ -1,0 +1,89 @@
+CREATE TABLE questionario(
+  id int not null primary key auto_increment,
+  nome varchar(150)
+);
+
+CREATE TABLE questao(
+  id int not null primary key auto_increment,
+  enunciado varchar(300) not null,
+  num_questao int not null,
+  fk_questionario int not null,
+  index(fk_questionario),
+  foreign key(fk_questionario) references questionario(id)  
+);
+
+CREATE TABLE itens_respondidos(
+  id int not null primary key auto_increment
+);
+
+CREATE TABLE itens(
+  id int not null primary key auto_increment,
+  item_enunciado varchar(150),
+  num_item int not null,
+  fk_questao int not null,
+  index(fk_questao),
+  foreign key(fk_questao) references questao(id)
+);
+  
+CREATE TABLE item(
+  id int not null primary key auto_increment,
+  fk_itens int not null,
+  index(fk_itens),
+  foreign key(fk_itens) references itens(id)
+);
+
+CREATE TABLE sub_item(
+  id int not null primary key auto_increment,
+  item_resp varchar(150) not null,
+  fk_item int not null,
+  fk_pai int not null,
+  index(fk_item,fk_pai),
+  foreign key(fk_pai) references itens_respondidos(id),
+  foreign key(fk_item) references questao(id)
+);
+
+CREATE TABLE escolha(
+  id int not null primary key auto_increment,
+  fk_itens int not null,
+  index(fk_itens),
+  foreign key(fk_itens) references itens(id)
+);
+
+CREATE TABLE escolha_tipo(
+  id int not null primary key auto_increment,
+  escolha_resp varchar(150) not null,
+  fk_escolha int not null,
+  fk_pai int not null,
+  index(fk_escolha, fk_pai),
+  foreign key(fk_pai) references itens_respondidos(id),
+  foreign key(fk_escolha) references escolha(id)
+);
+
+CREATE TABLE livre(
+  id int not null primary key auto_increment,
+  livre_resp varchar(150) not null,
+  fk_itens int not null,
+  fk_pai int not null,
+  index(fk_itens, fk_pai),
+  foreign key(fk_pai) references itens_respondidos(id),
+  foreign key(fk_itens) references questao(id)
+);
+  
+CREATE TABLE aluno(
+  id int not null primary key auto_increment,
+  nome varchar(150) not null
+  matricula varchar(150) not null unique
+  senha varchar(150) not null
+    
+);
+  
+
+CREATE TABLE resposta(
+  id int not null primary key auto_increment,
+  fk_item int not null,
+  fk_aluno int not null,
+  index(fk_item, fk_aluno),
+  foreign key(fk_item) references itens_respondidos(id),
+  foreign key(fk_aluno) references aluno(id)
+);
+  

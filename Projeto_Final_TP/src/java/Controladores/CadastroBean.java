@@ -9,6 +9,7 @@ import javax.faces.bean.RequestScoped;
 import Conexao.Aluno;
 import Conexao.AlunoJpaController;
 import Conexao.exceptions.NonexistentEntityException;
+import Conexao.exceptions.PreexistingEntityException;
 
 /**
  *
@@ -36,8 +37,15 @@ public class CadastroBean {
       
     /** Creates a new instance of CadastroBean */
        
-    public void salvar() throws NonexistentEntityException, Exception{
+    public void salvar() throws NonexistentEntityException, Exception, PreexistingEntityException{
     
+     //FAZER UM TRY CATCH PARA TRATAR O ERRO DE MATRICULAS IGUAIS.
+        
+        try {
+            
+        } catch (Exception e) {
+        }
+     
      AlunoJpaController jpa = new AlunoJpaController();
      jpa.create(cadastro);
     
