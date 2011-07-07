@@ -44,15 +44,15 @@
                 <h:panelGrid id="panelgridCadastro" columns="3"  cellspacing="25px">   
                     
                     <h:outputText  value="#{msg.promptcadastromenu7}" />   
-                    <p:keyboard  id="nomecadastro" value="#{cadastroBean.cadastro.nome}" required="true" requiredMessage="campo invalido"/> 
+                    <p:keyboard  id="nomecadastro" value="#{cadastroBean.cadastro.nome}" required="true" requiredMessage="#{msg.promptcadastromenu11}"/> 
                     <p:message for="nomecadastro"/>
                     
                     <h:outputText  value="#{msg.promptcadastromenu8}" />  
-                    <p:keyboard id="matriculacadastro" keypadOnly="true" value="#{cadastroBean.cadastro.matricula}" required="true" requiredMessage="campo invalido"/> 
+                    <p:keyboard id="matriculacadastro" keypadOnly="true" value="#{cadastroBean.cadastro.matricula}" required="true" requiredMessage="#{msg.promptcadastromenu12}"/> 
                     <p:message for="matriculacadastro"/>
                     
                     <h:outputText value="#{msg.promptcadastromenu9}" />  
-                    <p:password id="senhacadastro" feedback="true"  minLength="5" value="#{cadastroBean.cadastro.senha}" required="true" requiredMessage="campo invalido" />
+                    <p:password id="senhacadastro" feedback="true"  minLength="5" value="#{cadastroBean.cadastro.senha}" required="true" requiredMessage="#{msg.promptcadastromenu13}" />
                     <p:message for="senhacadastro"/>
                     
                     <p:commandButton value="#{msg.promptcadastromenu10}" action="#{cadastroBean.salvar}" ajax="false"/>
